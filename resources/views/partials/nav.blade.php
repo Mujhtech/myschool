@@ -368,8 +368,6 @@
                         </div>
                     </li>
                     @endif
-
-                    @if(config('laravel-mentor.usermenu_enabled'))
                     <li class="nav-item dropdown user-profile">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle " id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="{{ config('laravel-mentor.usermenu_image') }}" alt="avtar-img">
@@ -379,23 +377,22 @@
                             <div class="bg-gradient px-4 py-3">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="mr-1">
-                                        <h4 class="text-white mb-0">Alice Williams</h4>
-                                        <small class="text-white">Henry@example.com</small>
+                                        <h4 class="text-white mb-0">{{ Auth::user()->fullname }}</h4>
+                                        <small class="text-white">{{ Auth::user()->email }}</small>
                                     </div>
-                                    <a href="{{ url(config('laravel-mentor.logout_url', '#')) }}" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
+                                    <a href="{{ route('logout') }}" class="text-white font-20 tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout"> <i
                                                     class="zmdi zmdi-power"></i></a>
                                 </div>
                             </div>
                             <div class="p-4">
-                                <a class="dropdown-item d-flex nav-link" href="{{ url(config('laravel-mentor.usermenu_profile_url', '#')) }}">
+                                <a class="dropdown-item d-flex nav-link" href="{{ route('profile') }}">
                                     <i class="fa fa-user pr-2 text-success"></i> Profile</a>
-                                <a class="dropdown-item d-flex nav-link" href="{{ url(config('laravel-mentor.logout_url', '#')) }}">
-                                    <i class=" ti ti-settings pr-2 text-info"></i> Logout
+                                <a class="dropdown-item d-flex nav-link" href="{{ route('settings') }}">
+                                    <i class=" ti ti-settings pr-2 text-info"></i> Settings
                                 </a>
                             </div>
                         </div>
                     </li>
-                    @endif
                 </ul>
             </div>
         </div>

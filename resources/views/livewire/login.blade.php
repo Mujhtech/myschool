@@ -1,6 +1,15 @@
 <div>
     {{-- Close your eyes. Count to one. That is how long forever feels. --}}
+    @if (session()->has('alert'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Alert!</strong> {{ session('alert') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="ti ti-close"></i>
+            </button>
+        </div>
+    @endif
     <form wire:submit.prevent="submit" class="mt-2 mt-sm-5">
+        @csrf
         <div class="row">
             <div class="col-12">
                 <div class="form-group">

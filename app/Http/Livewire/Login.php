@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
+use Auth;
 
 use Livewire\Component;
 
@@ -18,9 +19,15 @@ class Login extends Component
     {
         $this->validate();
 
+        if(Auth::attempt(['email' => $this->email, 'password' => $this->password])){
 
-        return redirect()->to('/');
+            return redirect()->to('/');
 
+        } else {
+
+            session()->flash('alert', 'The provided credentials do not match our records.');
+
+        }
     }
 
     public function render()
