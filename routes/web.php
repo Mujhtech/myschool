@@ -26,7 +26,7 @@ Route::group(['prefix' => 'auth'], function(){
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/', function () {
-        return view('page');
+        return view('pages.admin.index');
     });
     Route::get('/profile', function () {
         return view('pages.profile');

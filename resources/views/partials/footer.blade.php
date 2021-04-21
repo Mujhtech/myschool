@@ -1,7 +1,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-12 col-sm-6 text-center text-sm-left">
-                    <p>&copy; {{ config('laravel-mentor.footer_text') }}</p>
+                    <p>&copy; {{ school_name() }}</p>
                 </div>
             <div class="col  col-sm-6 ml-sm-auto text-center text-sm-right">
                     <p><a target="_blank" href="{{url('/')}}">School Management System v1.2</a></p>
