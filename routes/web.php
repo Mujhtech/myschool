@@ -17,6 +17,10 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
+Route::get('/forgot-password', function () {
+    return view('auth.forgot');
+})->name('auth.forgot');
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/', function () {
@@ -39,4 +43,16 @@ Route::middleware(['auth'])->group(function () {
     })->name('roles');
 
     Route::get('logout', 'UserController@logout')->name('logout');
+});
+
+Route::group(['prefix' => 'student', 'middleware' => ['student']], function(){
+
+});
+
+Route::group(['prefix' => 'teacher', 'middleware' => ['student']], function(){
+    
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function(){
+    
 });
