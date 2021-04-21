@@ -15,6 +15,6 @@
 		<span class="input-group-text" id="basic-addon2"><i class="fa fa-unlock"></i></span>
 	</div>
 </div>
-<p class="mt-4 mb-0">Or sign in as a <a class="text-primary" href="auth-login.html">Different user</a></p>
+<p class="mt-4 mb-0">Or sign in as a <a class="text-primary" href="{{ route('auth.login') }}">Different user</a></p>
 
 @endsection

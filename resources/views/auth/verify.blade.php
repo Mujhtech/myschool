@@ -1,6 +1,6 @@
 @extends('layout.auth')
 
-@section('title', 'Verify')
+@section('title', 'New Password')
 
 @section('content')
 <p>Welcome back, please verify your account.</p>
@@ -13,10 +13,7 @@
             </div>
         </div>
         <div class="col-12 mt-3">
-            <a href="index.html" class="btn btn-primary text-uppercase">Verify</a>
-        </div>
-        <div class="col-12  mt-3">
-            <p>Don't have an account ?<a href="auth-register.html"> Sign Up</a></p>
+            <a href="index.html" class="btn btn-primary text-uppercase">Change password</a>
         </div>
     </div>
 </form>

@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+Route::group(['prefix' => 'auth'], function(){
+    Route::get('/login', function () {
+        return view('auth.login');
+    })->name('auth.login');
 
-Route::get('/forgot-password', function () {
-    return view('auth.forgot');
-})->name('auth.forgot');
+    Route::get('/forgot-password', function () {
+        return view('auth.forgot');
+    })->name('auth.forgot');
+});
 
 Route::middleware(['auth'])->group(function () {
 
