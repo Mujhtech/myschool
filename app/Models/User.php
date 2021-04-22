@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->avatar ? $this->avatar : 'https://ui-avatars.com/api/?name='.urlencode($this->fullname).'&color=7F9CF5&background=EBF4FF';
     }
+    
+
+    public function setPasswordAttribute($value) {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }
