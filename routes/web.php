@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::group(['prefix' => 'auth'], function(){
+    
     Route::get('/login', function () {
         return view('auth.login');
     })->name('auth.login');
@@ -21,6 +22,11 @@ Route::group(['prefix' => 'auth'], function(){
     Route::get('/forgot-password', function () {
         return view('auth.forgot');
     })->name('auth.forgot');
+
+    Route::get('/locked', function () {
+        return view('auth.locked');
+    })->name('auth.locked');
+
 });
 
 Route::middleware(['auth'])->group(function () {
