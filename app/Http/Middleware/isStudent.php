@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class isLocked
+class isTeacher
 {
     /**
      * Handle an incoming request.
@@ -16,8 +16,8 @@ class isLocked
      */
     public function handle(Request $request, Closure $next)
     {
-        if (! $request->user()->locked) {
-            return route('auth.locked');
+        if (! $request->user()->role_id == 4) {
+            return back()->with('info', 'You dont have access to this file');
         }
 
         return $next($request);
