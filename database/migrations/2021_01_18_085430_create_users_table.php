@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('fullname');
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
-            $table->boolen('locked');
-            $table->string('otp');
-            $table->timestamp('otp_expired');
+            $table->boolean('locked')->default(false)->nullable();
+            $table->string('otp')->nullable();
+            $table->timestamp('otp_expired')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

@@ -24,6 +24,22 @@ class SettingSeeder extends Seeder
                 "type" => "school-logo",
                 "value" => null,
             ],
+            [
+                "type" => "favicon",
+                "value" => null,
+            ],
+            [
+                "type" => "application-form",
+                "value" => "open",
+            ],
+            [
+                "type" => "school-email",
+                "value" => null,
+            ],
+            [
+                "type" => "application-fee",
+                "value" => null,
+            ],
         ];
 
     	foreach ($settings as $setting) {

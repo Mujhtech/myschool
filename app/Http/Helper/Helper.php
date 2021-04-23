@@ -15,6 +15,18 @@ if (!function_exists('school_logo')) {
 }
 
 
+if (!function_exists('get_favicon')) {
+
+	function get_favicon(){
+		$school_name = Setting::where('type', 'school-name')->first()->value;
+		$favicon = Setting::where('type', 'favicon')->first()->value;
+
+		return $favicon ? $favicon : 'https://ui-avatars.com/api/?name='.urlencode($school_name).'&color=7F9CF5&background=EBF4FF';
+	}
+
+}
+
+
 if (!function_exists('school_name')) {
 
 	function school_name(){
@@ -22,6 +34,18 @@ if (!function_exists('school_name')) {
 		$school_name = Setting::where('type', 'school-name')->first()->value;
 
 		return $school_name;
+	}
+
+}
+
+
+if (!function_exists('get_setting')) {
+
+	function get_setting(string $type){
+		
+		$value = Setting::where('type', $type)->first()->value;
+
+		return $value;
 	}
 
 }

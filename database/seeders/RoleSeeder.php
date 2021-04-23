@@ -41,7 +41,7 @@ class RoleSeeder extends Seeder
     		if( !$existing->isEmpty() ){
     			continue;
     		}
-           Role::create($setting);
+           Role::create($role);
     	}
     }
 }

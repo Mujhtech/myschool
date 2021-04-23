@@ -10,7 +10,7 @@
     <meta name="author" content="Potenza Global Solutions" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- app favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" href="{{ get_favicon() }}">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <!-- plugin stylesheets -->
@@ -45,7 +45,7 @@
                             <div class="col-sm-6 col-lg-5 col-xxl-3  align-self-center order-2 order-sm-1">
                                 <div class="d-flex align-items-center h-100-vh">
                                     <div class="login p-50">
-                                        <h1 class="mb-2">We Are {{ config('laravel-mentor.title', 'Laravel Mentor') }}</h1>
+                                        <h1 class="mb-2">We Are {{ get_setting('school-name') }}</h1>
 
                                         @yield('content')
 
