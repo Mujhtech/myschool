@@ -53,14 +53,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('logout', 'UserController@logout')->name('logout');
 });
 
-Route::group(['prefix' => 'student', 'middleware' => ['student']], function(){
+Route::group(['prefix' => 'student', 'middleware' => ['locked', 'student']], function(){
 
 });
 
-Route::group(['prefix' => 'teacher', 'middleware' => ['student']], function(){
+Route::group(['prefix' => 'teacher', 'middleware' => ['locked', 'teacher']], function(){
     
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['locked', 'admin']], function(){
     
 });
