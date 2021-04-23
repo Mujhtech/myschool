@@ -29,7 +29,7 @@ Route::group(['prefix' => 'auth'], function(){
 
 });
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'locked'])->group(function () {
 
     Route::get('/', function () {
         return view('pages.admin.index');
@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('roles');
 
     Route::get('logout', 'UserController@logout')->name('logout');
+    Route::get('locked', 'UserController@locked')->name('locked');
 });
 
 Route::group(['prefix' => 'student', 'middleware' => ['locked', 'student']], function(){

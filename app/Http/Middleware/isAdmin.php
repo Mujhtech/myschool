@@ -17,7 +17,7 @@ class isAdmin
     public function handle(Request $request, Closure $next)
     {
         if (! $request->user()->role_id == 1 || ! $request->user()->role_id == 2) {
-            return back()->with('info', 'You dont have access to this file');
+            return redirect()->back()->with('info', 'You dont have access to this file');
         }
 
         return $next($request);

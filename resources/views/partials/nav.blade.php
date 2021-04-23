@@ -390,6 +390,9 @@
                                 <a class="dropdown-item d-flex nav-link" href="{{ route('settings') }}">
                                     <i class=" ti ti-settings pr-2 text-info"></i> Settings
                                 </a>
+                                <a class="dropdown-item d-flex nav-link" href="{{ route('locked') }}">
+                                    <i class=" ti ti-settings pr-2 text-info"></i> Locked
+                                </a>
                             </div>
                         </div>
                     </li>

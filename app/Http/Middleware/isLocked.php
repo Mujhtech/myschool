@@ -16,10 +16,14 @@ class isLocked
      */
     public function handle(Request $request, Closure $next)
     {
-        if (! $request->user()->locked) {
-            return route('auth.locked');
-        }
+        if ($request->user()->locked == 0) {
 
-        return $next($request);
+            return $next($request);
+
+        } else {
+
+            return redirect()->route('auth.locked');
+
+        }
     }
 }
