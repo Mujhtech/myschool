@@ -23,11 +23,11 @@ Route::group(['prefix' => 'auth'], function(){
         return view('auth.forgot');
     })->name('auth.forgot');
 
-    Route::get('/locked', function () {
-        return view('auth.locked');
-    })->name('auth.locked');
-
 });
+
+Route::get('auth/locked', function () {
+    return view('auth.locked');
+})->middleware('auth')->name('auth.locked');
 
 Route::middleware(['auth', 'locked'])->group(function () {
 
@@ -63,5 +63,35 @@ Route::group(['prefix' => 'teacher', 'middleware' => ['locked', 'teacher']], fun
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['locked', 'admin']], function(){
+
+    Route::get('/setting', function () {
+        return view('pages.admin.setting');
+    })->name('admin.setting');
+
+    Route::get('/profile', function () {
+        return view('pages.admin.profile');
+    })->name('admin.profile');
+
+    Route::get('/manage-class', function () {
+        return view('pages.admin.profile');
+    })->name('admin.manage-class');
+
+    Route::get('/manage-academic-session', function () {
+        return view('pages.admin.profile');
+    })->name('admin.manage-academic-session');
+
+
+    Route::get('/manage-grade', function () {
+        return view('pages.admin.profile');
+    })->name('admin.manage-grade');
+
+
+    Route::get('/manage-role', function () {
+        return view('pages.admin.profile');
+    })->name('admin.manage-role');
+
+    Route::get('/manage-student', function () {
+        return view('pages.admin.profile');
+    })->name('admin.manage-student');
     
 });

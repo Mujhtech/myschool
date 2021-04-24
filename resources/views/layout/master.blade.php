@@ -17,7 +17,7 @@
         <div class="container-fluid">
             @include('partials.breadcrumb')
             <!-- Notification -->
-            <div class="row">
+            <!--<div class="row">
                 <div class="col-md-12">
                     <div class="alert border-0 alert-primary bg-gradient m-b-30 alert-dismissible fade show border-radius-none" role="alert">
                         <strong>Holy guacamole!</strong> You should check in on some of those
@@ -27,7 +27,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             @yield('content')
             
