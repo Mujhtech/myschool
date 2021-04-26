@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::group(['prefix' => 'auth'], function(){
-    
+
     Route::get('/login', function () {
         return view('auth.login');
     })->name('auth.login');
@@ -54,15 +54,15 @@ Route::middleware(['auth', 'locked'])->group(function () {
     Route::get('locked', 'UserController@locked')->name('locked');
 });
 
-Route::group(['prefix' => 'student', 'middleware' => ['locked', 'student']], function(){
+Route::group(['prefix' => 'student', 'middleware' => ['auth', 'student', 'locked']], function(){
 
 });
 
-Route::group(['prefix' => 'teacher', 'middleware' => ['locked', 'teacher']], function(){
-    
+Route::group(['prefix' => 'teacher', 'middleware' => ['auth', 'teacher', 'locked']], function(){
+
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['locked', 'admin']], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin', 'locked']], function(){
 
     Route::get('/setting', function () {
         return view('pages.admin.setting');
@@ -93,5 +93,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['locked', 'admin']], functio
     Route::get('/manage-student', function () {
         return view('pages.admin.profile');
     })->name('admin.manage-student');
-    
+
 });
