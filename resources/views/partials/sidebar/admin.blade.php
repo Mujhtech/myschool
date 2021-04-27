@@ -9,22 +9,28 @@
                     <span class="nav-title">Dashboard</span>
                 </a>
             </li>
+            <li class="{{  Route::is('admin.messaging') ? 'active' : ''  }}">
+                <a href="{{ route('admin.messaging') }}" aria-expanded="false">
+                    <i class="nav-icon ti ti-comment"></i>
+                    <span class="nav-title">Messaging</span>
+                </a>
+            </li>
             <li class="nav-static-title">Users</li>
             <li class="{{  Route::is('admin.manage-role') ? 'active' : ''  }}">
                 <a href="{{ route('admin.manage-role') }}" aria-expanded="false">
-                    <i class="nav-icon ti ti-comment"></i>
+                    <i class="nav-icon zmdi zmdi-account"></i>
                     <span class="nav-title">Manage User Role</span>
                 </a>
             </li>
             <li class="{{  Route::is('admin.manage-role') ? 'active' : ''  }}">
                 <a href="{{ route('admin.manage-role') }}" aria-expanded="false">
-                    <i class="nav-icon ti ti-comment"></i>
+                    <i class="nav-icon zmdi zmdi-accounts"></i>
                     <span class="nav-title">Manage Teachers</span>
                 </a>
             </li>
             <li class="{{  Route::is('admin.manage-student') ? 'active' : ''  }}">
                 <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">
-                    <i class="nav-icon ti ti-rocket"></i>
+                    <i class="nav-icon zmdi zmdi-accounts"></i>
                     <span class="nav-title">Manage Students</span>
                 </a>
                 <ul aria-expanded="false">
@@ -67,13 +73,13 @@
             </li>
             <li class="{{  Route::is('admin.setting') ? 'active' : ''  }}">
                 <a href="{{ route('admin.setting') }}" aria-expanded="false">
-                    <i class="nav-icon ti ti-comment"></i>
+                    <i class="nav-icon zmdi zmdi-settings"></i>
                     <span class="nav-title">Settings</span>
                 </a>
             </li>
             <li class="{{  Route::is('admin.profile') ? 'active' : ''  }}">
                 <a href="{{ route('admin.profile') }}" aria-expanded="false">
-                    <i class="nav-icon ti ti-comment"></i>
+                    <i class="nav-icon zmdi zmdi-account"></i>
                     <span class="nav-title">Profile</span>
                 </a>
             </li>
