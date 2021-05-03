@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { React, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function Login() {
+
     return (
-        <Router>
         <div>
             <div className="app">
                 <div className="app-wrap">
@@ -71,7 +71,6 @@ function Login() {
                 </div>
             </div>
         </div>
-        </Router>
     );
 }
 

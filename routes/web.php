@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::get('welcome', function () {
+Route::get('/{any}', function () {
     return view('welcome');
-});
+})->where('any', '.*');;
 
 
 
@@ -36,8 +36,8 @@ Route::get('auth/locked', function () {
 
 Route::middleware(['auth', 'locked'])->group(function () {
 
-    Route::get('/', function () {
-        return view('pages.admin.index');
+    Route::get('/home', function () {
+        return view('pages.admin.index')->name('home');
     });
     Route::get('/profile', function () {
         return view('pages.profile');

@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./auths/Login";
 import ForgotPassword from "./auths/ForgotPassword";
 import Locked from "./auths/Locked";
 import Otp from "./auths/Otp";
+import Home from "./Home";
+import NoMatch from "./errors/NoMatch";
 
 function App() {
     return (
@@ -22,7 +24,10 @@ function App() {
                 <Locked />
             </Route>
             <Route path="/">
-                <Home />
+                <Home/>
+            </Route>
+            <Route path="*">
+                <NoMatch />
             </Route>
         </Switch>
     );
@@ -31,5 +36,5 @@ function App() {
 export default App;
 
 if (document.getElementById('root')) {
-    ReactDOM.render(<Login />, document.getElementById('root'));
+    ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
 }

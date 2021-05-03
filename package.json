@@ -24,6 +24,7 @@
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
-        "react-router-dom": "^5.2.0"
+        "react-router-dom": "^5.2.0",
+        "nprogress": "^0.2.0"
     }
 }
