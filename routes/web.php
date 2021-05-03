@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
+Route::get('welcome', function () {
+    return view('welcome');
+});
+
+
 
 Route::group(['prefix' => 'auth'], function(){
 
@@ -93,5 +98,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin', 'locked']],
     Route::get('/manage-student', function () {
         return view('pages.admin.profile');
     })->name('admin.manage-student');
+
+    Route::get('/messaging', function () {
+        return view('pages.admin.messaging');
+    })->name('admin.messaging');
 
 });
