@@ -1,7 +1,12 @@
 import { React, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-function Login() {
+function Login(props) {
+
+    useEffect(() => {
+
+    }, []);
+
 
     return (
         <div>
