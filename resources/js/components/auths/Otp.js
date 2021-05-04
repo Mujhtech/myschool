@@ -20,7 +20,7 @@ function Otp() {
                                                         <div className="row">
                                                             <div className="col-12">
                                                                 <div className="form-group">
-                                                                    <label className="control-label">Email*</label>
+                                                                    <label className="control-label">Otp*</label>
                                                                     <input type="email" className="form-control"
                                                                            placeholder="Email Address" id="email"/>
 
@@ -29,7 +29,7 @@ function Otp() {
 
                                                             <div className="col-12 mt-3">
                                                                 <button type="submit"
-                                                                        className="btn btn-primary text-uppercase">Forgot Password
+                                                                        className="btn btn-primary text-uppercase">Verify
                                                                 </button>
                                                             </div>
                                                         </div>

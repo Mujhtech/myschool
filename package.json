@@ -25,6 +25,8 @@
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
         "react-router-dom": "^5.2.0",
-        "nprogress": "^0.2.0"
+        "nprogress": "^0.2.0",
+        "redux": "^4.1.0",
+        "react-redux": "^7.2.4"
     }
 }
