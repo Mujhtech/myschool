@@ -157,7 +157,7 @@ function Nav() {
                                 <div className="dropdown-menu extended animated fadeIn"
                                      aria-labelledby="navbarDropdown">
                                     <ul>
-                                        <li className="dropdown-header bg-gradient p-4 text-white text-left">Notifications
+                                        <li className="dropdown-header bg-gradient p-4 text-white text-left">Activities
                                             <a href="#"
                                                className="float-right btn btn-square btn-inverse-light btn-xs m-0">
                                                 <span className="font-13"> Clear all</span></a>
@@ -247,7 +247,7 @@ function Nav() {
                                             </ul>
                                         </li>
                                         <li className="dropdown-footer">
-                                            <a className="font-13" href={void(0)}> View All Notifications
+                                            <a className="font-13" href={void(0)}> View All Activities
                                             </a>
                                         </li>
                                     </ul>
