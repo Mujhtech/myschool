@@ -1,7 +1,8 @@
 import { Constant } from "../constant"
 
 const iniState = {
-    user: {}
+    user: {},
+    isLoggedIn: false
 }
 export const userReducer = (state = iniState, {type, payload}) => {
     switch (type){

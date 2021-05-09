@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { Constant } from '../constant';
 
 export function http() {
     return axios.create({
-        baseURL: store.state.apiURL,
+        baseURL: Constant.API_URL,
         headers: {
             Authorization: 'Bearer ',
         }
@@ -11,7 +12,7 @@ export function http() {
 
 export function httpFile() {
     return axios.create({
-        baseURL: store.state.apiURL,
+        baseURL: Constant.API_URL,
         headers: {
             Authorization: 'Bearer ',
             'Content-Type': 'multipart/form-data'
