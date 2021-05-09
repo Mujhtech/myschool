@@ -21,3 +21,13 @@ Route::get('/', function(){
 	], 200);
 });
 
+Route::group(['prefix' => 'auth'], function(){
+    Route::post('otp', 'API\AuthController@otp');
+    Route::post('login', 'API\AuthController@login');
+    Route::post('locked', 'API\AuthController@locked');
+    Route::group(['middleware' => ['auth:api', 'locked']], function() {
+        Route::get('logout', 'API\AuthController@logout');
+        Route::get('profile', 'API\AuthController@profile');
+    });
+});
+
