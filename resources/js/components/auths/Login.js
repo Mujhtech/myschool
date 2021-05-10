@@ -1,7 +1,17 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import {login} from "../../services/auth";
 
 function Login(props) {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const loggedIn = async (e) => {
+        e.preventDefault();
+        const response = await login({email, password, remember_me: false});
+        console.log(response);
+    };
 
     useEffect(() => {
 
@@ -21,13 +31,13 @@ function Login(props) {
                                             <div className="login p-50">
                                                 <h1 className="mb-2">We Are </h1>
                                                 <p>Welcome back, please login to your account.</p>
-                                                <form className="mt-2 mt-sm-5">
+                                                <form className="mt-2 mt-sm-5" method="POST" onSubmit={(e) => loggedIn(e)}>
                                                     <div className="row">
                                                         <div className="col-12">
                                                             <div className="form-group">
                                                                 <label className="control-label">Email*</label>
                                                                 <input type="email" className="form-control"
-                                                                       placeholder="Email Address" id="email"/>
+                                                                       placeholder="Email Address" onChange={(e) => setEmail(e.target.value)}/>
 
                                                             </div>
                                                         </div>
@@ -35,7 +45,7 @@ function Login(props) {
                                                             <div className="form-group">
                                                                 <label className="control-label">Password*</label>
                                                                 <input type="password" className="form-control"
-                                                                       placeholder="Password" id="password"/>
+                                                                       placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
 
                                                             </div>
                                                         </div>

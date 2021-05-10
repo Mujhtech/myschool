@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     public function login(Request $request){
+
         $request->validate([
             'password' => 'required|string',
             'email' => 'required|string|email',
@@ -21,13 +22,13 @@ class AuthController extends Controller
         if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             return response()->json([
                 'message' => 'Invalid username/password',
-                'status' => 401
-            ], 401);
+                'status' => 500
+            ], 500);
         }
 
         $user = $request->user();
 
-        if ($user->role == 'administrator'){
+        if ($user->role_id == 'administrator'){
             $tokenData = $user->createToken('Personal Access Token', ['administrator']);
         } else {
             $tokenData = $user->createToken('Personal Access Token', ['user']);
