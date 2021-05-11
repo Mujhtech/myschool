@@ -6,7 +6,9 @@ export function http() {
     return axios.create({
         baseURL: Constant.API_URL,
         headers: {
-            Authorization: 'Bearer '+getAccessToken(),
+            'Accept': 'application/json',
+            //'Content-Type': 'application/json',
+            Authorization: 'Bearer ',
         }
     });
 }
@@ -16,7 +18,8 @@ export function httpFile() {
         baseURL: Constant.API_URL,
         headers: {
             Authorization: 'Bearer '+getAccessToken(),
-            'Content-Type': 'multipart/form-data'
+            'Content-Type': 'multipart/form-data',
+            'Accept': 'application/json',
         }
     });
 }

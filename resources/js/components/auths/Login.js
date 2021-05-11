@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import {login} from "../../services/auth";
+import {getIndex} from "../../services/user";
 
 function Login(props) {
 
@@ -9,8 +10,13 @@ function Login(props) {
 
     const loggedIn = async (e) => {
         e.preventDefault();
-        const response = await login({email, password, remember_me: false});
-        console.log(response);
+        try {
+            //const response = await login({email: email, password: password, remember_me: false});
+            const response = await getIndex();
+            console.log(response);
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     useEffect(() => {
