@@ -8,7 +8,6 @@ export function register(data) {
 export function login(data) {
     return http().post('/auth/login', data)
         .then(response => {
-            console.log(response);
             if(response.data.status === 200){
                 setToken(response.data);
             }
@@ -18,21 +17,21 @@ export function login(data) {
 
 function setToken(user){
     //const token = CryptoJS.AES.encrypt({user: user}, 'laravellaravelvuevuespaspa').toString();
-    localStorage.setItem('laravelVueSpa', user);
+    localStorage.setItem('laravelReactSpa', user);
 }
 
 export function isLoggedIn() {
-    const token = localStorage.getItem('laravelVueSpa');
+    const token = localStorage.getItem('laravelReactSpa');
     return token != null;
 }
 
 export function logout() {
     http().get('/auth/logout');
-    localStorage.removeItem('laravelVueSpa');
+    localStorage.removeItem('laravelReactSpa');
 }
 
 export function getAccessToken() {
-    const token = localStorage.getItem('laravelVueSpa');
+    const token = localStorage.getItem('laravelReactSpa');
     if (!token){
         return null;
     }

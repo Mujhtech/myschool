@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import FancyRoute from "./components/FancyRoute";
 import { Provider } from 'react-redux';
 import routes from "./routes";
-import {store} from "./stores";
+import {store} from "./stores/index";
 
 const App = props =>
     <Router>

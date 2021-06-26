@@ -1,21 +1,45 @@
 import { React, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import {login} from "../../services/auth";
-import {getIndex} from "../../services/user";
+import { login } from "../../services/auth";
+import { setLogin } from "../../actions/user";
+import { userReducer } from "../../stores/user";
+import { useDispatch } from 'react-redux';
 
 function Login(props) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState({});
+    const [errorMessage, setErrorMessage] = useState("");
+    const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
 
     const loggedIn = async (e) => {
         e.preventDefault();
         try {
-            //const response = await login({email: email, password: password, remember_me: false});
-            const response = await getIndex();
-            console.log(response);
-        } catch (e) {
-            console.log(e);
+            setLoading(true);
+            const response = await login({email: email, password: password, remember_me: false});
+            console.log(response.user);
+            dispatch(setLogin(response.user));
+            setLoading(false);
+            props.history.push('/');
+
+        } catch (err) {
+            setLoading(false);
+            if(!err.response) return;
+            switch (err.response.status) {
+              case 422:
+                setErrors(err.response.data.errors);
+                break
+              case 401:
+                setErrorMessage(err.response.data.message);
+                break
+              case 500:
+                setErrorMessage(err.response.data.message);
+                break
+              default:
+                break
+            }
         }
     };
 
@@ -69,8 +93,8 @@ function Login(props) {
                                                             </div>
                                                         </div>
                                                         <div className="col-12 mt-3">
-                                                            <button type="submit"
-                                                                    className="btn btn-primary text-uppercase">Sign In
+                                                            <button disable="{loading}" type="submit"
+                                                                    className="btn btn-primary text-uppercase">{loading ? 'Loading..' : 'Sign In' }
                                                             </button>
                                                         </div>
                                                     </div>

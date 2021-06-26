@@ -20,10 +20,12 @@ class AuthController extends Controller
         ]);
 
         if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+
             return response()->json([
                 'message' => 'Invalid username/password',
                 'status' => 500
             ], 500);
+            
         }
 
         $user = $request->user();

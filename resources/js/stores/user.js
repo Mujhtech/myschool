@@ -1,10 +1,10 @@
 import { Constant } from "../constant"
 
-const iniState = {
+export const userInitState = {
     user: {},
     isLoggedIn: false
 }
-export const userReducer = (state = iniState, {type, payload}) => {
+export const userReducer = (state = userInitState, {type, payload}) => {
     switch (type){
         case Constant.SET_USER_LOGIN:
             return {...state, user: payload}
