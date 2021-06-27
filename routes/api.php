@@ -31,3 +31,5 @@ Route::group(['prefix' => 'auth'], function(){
     });
 });
 
+Route::resource('/setting', 'API\SettingController');
+

@@ -1,5 +1,5 @@
 import { http } from "./http";
-const CryptoJS = require("crypto-js");
+var CryptoJS = require("crypto-js");
 
 export function register(data) {
     return http().post('/auth/register', data);
@@ -10,16 +10,16 @@ export function login(data) {
         .then(response => {
             console.log(response);
             if(response.data.status === 200){
-                //setToken(response.data);
+                setToken(response.data);
             }
             return response.data;
         });
 }
 
 function setToken(user){
-    const token = CryptoJS.AES.encrypt({user: user}, 'laravellaravelvuevuespaspa').toString();
-    console.log(token);
-    localStorage.setItem('laravelReactSpa', token);
+    var ciphertext = CryptoJS.AES.encrypt(JSON.stringify({user: user}), 'laravellaravelvuevuespaspa');
+    console.log(ciphertext.toString());
+    localStorage.setItem('laravelReactSpa', ciphertext);
 }
 
 export function isLoggedIn() {
@@ -38,12 +38,10 @@ export function getAccessToken() {
         return null;
     }
 
-    console.log(user);
+    var bytes  = CryptoJS.AES.decrypt(user.toString(), 'laravellaravelvuevuespaspa');
+    var plaintext = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
-    const bytes = CryptoJS.AES.decrypt(token, "laravellaravelvuevuespaspa");
-    const tokenData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-
-    return tokenData.user.access_token;
+    return plaintext.user.access_token;
 }
 
 export function getProfile() {

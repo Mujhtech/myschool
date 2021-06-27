@@ -4110,6 +4110,28 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/actions/setting.js":
+/*!*****************************************!*\
+  !*** ./resources/js/actions/setting.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "setSetting": () => (/* binding */ setSetting)
+/* harmony export */ });
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constant */ "./resources/js/constant.js");
+
+var setSetting = function setSetting(payload) {
+  return {
+    type: _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_APP_SETTING,
+    payload: payload
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/actions/user.js":
 /*!**************************************!*\
   !*** ./resources/js/actions/user.js ***!
@@ -4210,20 +4232,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! nprogress */ "./node_modules/nprogress/nprogress.js");
-/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var nprogress_nprogress_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nprogress/nprogress.css */ "./node_modules/nprogress/nprogress.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-/* harmony import */ var _css_FancyRoute_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/FancyRoute.css */ "./resources/css/FancyRoute.css");
-/* harmony import */ var _PrivateRoute__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PrivateRoute */ "./resources/js/components/PrivateRoute.js");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nprogress */ "./node_modules/nprogress/nprogress.js");
+/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var nprogress_nprogress_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nprogress/nprogress.css */ "./node_modules/nprogress/nprogress.css");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _css_FancyRoute_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/FancyRoute.css */ "./resources/css/FancyRoute.css");
+/* harmony import */ var _PrivateRoute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PrivateRoute */ "./resources/js/components/PrivateRoute.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_setting__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../actions/setting */ "./resources/js/actions/setting.js");
+/* harmony import */ var _services_setting__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/setting */ "./resources/js/services/setting.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
 
 
 
@@ -4235,20 +4271,59 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var FancyRoute = function FancyRoute(props) {
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useDispatch)();
   var NewComponent = props.component;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(nprogress__WEBPACK_IMPORTED_MODULE_1___default().start());
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+
+  var fetchSetting = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return (0,_services_setting__WEBPACK_IMPORTED_MODULE_9__.getSetting)();
+
+            case 3:
+              response = _context.sent;
+              console.log(response);
+              dispatch((0,_actions_setting__WEBPACK_IMPORTED_MODULE_8__.setSetting)(response.setting));
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](0);
+              console.log(_context.t0.response);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 8]]);
+    }));
+
+    return function fetchSetting() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(nprogress__WEBPACK_IMPORTED_MODULE_2___default().start());
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    fetchSetting();
     document.title = props.title;
-    nprogress__WEBPACK_IMPORTED_MODULE_1___default().done();
+    nprogress__WEBPACK_IMPORTED_MODULE_2___default().done();
     return function () {
-      nprogress__WEBPACK_IMPORTED_MODULE_1___default().start();
+      nprogress__WEBPACK_IMPORTED_MODULE_2___default().start();
     };
   }, []);
-  return props["protected"] === true ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_4__.default, {
+  return props["protected"] === true ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_5__.default, {
     path: props.path,
     exact: true,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(NewComponent, {})
-  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, _objectSpread({}, props));
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(NewComponent, {})
+  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, _objectSpread({}, props));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FancyRoute);
@@ -4829,11 +4904,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/user */ "./resources/js/actions/user.js");
 /* harmony import */ var _services_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/auth */ "./resources/js/services/auth.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-toast-notifications */ "./node_modules/react-toast-notifications/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -4857,6 +4933,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
+
 var PrivateRoute = function PrivateRoute(_ref) {
   var children = _ref.children,
       rest = _objectWithoutProperties(_ref, ["children"]);
@@ -4865,6 +4942,9 @@ var PrivateRoute = function PrivateRoute(_ref) {
     return state.user.isLoggedIn;
   });
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
+
+  var _useToasts = (0,react_toast_notifications__WEBPACK_IMPORTED_MODULE_5__.useToasts)(),
+      addToast = _useToasts.addToast;
 
   var fetchUserProfile = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -4879,22 +4959,24 @@ var PrivateRoute = function PrivateRoute(_ref) {
 
             case 3:
               response = _context.sent;
-              console.log(response); //dispatch(setProfile(response.user));
-
-              _context.next = 10;
+              console.log(response);
+              dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_3__.setProfile)(response.data));
+              _context.next = 11;
               break;
 
-            case 7:
-              _context.prev = 7;
+            case 8:
+              _context.prev = 8;
               _context.t0 = _context["catch"](0);
-              console.log(_context.t0.response);
+              addToast(_context.t0.response.data.message, {
+                appearance: 'error'
+              }); //console.log(err.response)
 
-            case 10:
+            case 11:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 7]]);
+      }, _callee, null, [[0, 8]]);
     }));
 
     return function fetchUserProfile() {
@@ -4905,10 +4987,10 @@ var PrivateRoute = function PrivateRoute(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     fetchUserProfile();
   }, [loggedIn]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, _objectSpread(_objectSpread({}, rest), {}, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, _objectSpread(_objectSpread({}, rest), {}, {
     render: function render(_ref3) {
       var location = _ref3.location;
-      return loggedIn === true ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Redirect, {
+      return loggedIn === true ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Redirect, {
         to: {
           pathname: '/auth/login',
           state: {
@@ -5440,53 +5522,53 @@ function Login(props) {
             case 5:
               response = _context.sent;
               dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_3__.setLogin)(response.user));
-              setLoading(false);
-              props.history.push('/');
-              _context.next = 26;
+              setLoading(false); //props.history.push('/');
+
+              _context.next = 25;
               break;
 
-            case 11:
-              _context.prev = 11;
+            case 10:
+              _context.prev = 10;
               _context.t0 = _context["catch"](1);
               setLoading(false);
 
               if (_context.t0.response) {
-                _context.next = 16;
+                _context.next = 15;
                 break;
               }
 
               return _context.abrupt("return");
 
-            case 16:
+            case 15:
               _context.t1 = _context.t0.response.status;
-              _context.next = _context.t1 === 422 ? 19 : _context.t1 === 401 ? 21 : _context.t1 === 500 ? 23 : 25;
+              _context.next = _context.t1 === 422 ? 18 : _context.t1 === 401 ? 20 : _context.t1 === 500 ? 22 : 24;
               break;
 
-            case 19:
+            case 18:
               errorsMessage(_context.t0.response.data.errors);
-              return _context.abrupt("break", 26);
+              return _context.abrupt("break", 25);
 
-            case 21:
+            case 20:
               addToast(_context.t0.response.data.message, {
                 appearance: 'error'
               });
-              return _context.abrupt("break", 26);
+              return _context.abrupt("break", 25);
 
-            case 23:
+            case 22:
               addToast(_context.t0.response.data.message, {
                 appearance: 'error'
               });
-              return _context.abrupt("break", 26);
+              return _context.abrupt("break", 25);
+
+            case 24:
+              return _context.abrupt("break", 25);
 
             case 25:
-              return _context.abrupt("break", 26);
-
-            case 26:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 11]]);
+      }, _callee, null, [[1, 10]]);
     }));
 
     return function loggedIn(_x) {
@@ -5538,6 +5620,7 @@ function Login(props) {
                                 type: "email",
                                 className: "form-control",
                                 placeholder: "Email Address",
+                                disabled: loading,
                                 onChange: function onChange(e) {
                                   return setEmail(e.target.value);
                                 }
@@ -5554,6 +5637,7 @@ function Login(props) {
                                 type: "password",
                                 className: "form-control",
                                 placeholder: "Password",
+                                disabled: loading,
                                 onChange: function onChange(e) {
                                   return setPassword(e.target.value);
                                 }
@@ -5583,7 +5667,7 @@ function Login(props) {
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                             className: "col-12 mt-3",
                             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
-                              disable: "{loading}",
+                              disabled: loading,
                               type: "submit",
                               className: "btn btn-primary text-uppercase",
                               children: loading ? 'Loading..' : 'Sign In'
@@ -6026,7 +6110,8 @@ var Constant = {
   SERVER_URL: "http://127.0.0.1:8000",
   SET_USER_LOGIN: "SET_USER_LOGIN",
   SET_USER_LOGOUT: "SET_USER_LOGOUT",
-  SET_USER_PROFILE: "SET_USER_PROFILE"
+  SET_USER_PROFILE: "SET_USER_PROFILE",
+  SET_APP_SETTING: "SET_APP_SETTING"
 };
 
 /***/ }),
@@ -6118,7 +6203,8 @@ function login(data) {
   return (0,_http__WEBPACK_IMPORTED_MODULE_0__.http)().post('/auth/login', data).then(function (response) {
     console.log(response);
 
-    if (response.data.status === 200) {//setToken(response.data);
+    if (response.data.status === 200) {
+      setToken(response.data);
     }
 
     return response.data;
@@ -6126,11 +6212,11 @@ function login(data) {
 }
 
 function setToken(user) {
-  var token = CryptoJS.AES.encrypt({
+  var ciphertext = CryptoJS.AES.encrypt(JSON.stringify({
     user: user
-  }, 'laravellaravelvuevuespaspa').toString();
-  console.log(token);
-  localStorage.setItem('laravelReactSpa', token);
+  }), 'laravellaravelvuevuespaspa');
+  console.log(ciphertext.toString());
+  localStorage.setItem('laravelReactSpa', ciphertext);
 }
 
 function isLoggedIn() {
@@ -6148,10 +6234,9 @@ function getAccessToken() {
     return null;
   }
 
-  console.log(user);
-  var bytes = CryptoJS.AES.decrypt(token, "laravellaravelvuevuespaspa");
-  var tokenData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-  return tokenData.user.access_token;
+  var bytes = CryptoJS.AES.decrypt(user.toString(), 'laravellaravelvuevuespaspa');
+  var plaintext = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+  return plaintext.user.access_token;
 }
 function getProfile() {
   return (0,_http__WEBPACK_IMPORTED_MODULE_0__.http)().get('/auth/profile');
@@ -6205,6 +6290,28 @@ function httpFile() {
 
 /***/ }),
 
+/***/ "./resources/js/services/setting.js":
+/*!******************************************!*\
+  !*** ./resources/js/services/setting.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getSetting": () => (/* binding */ getSetting)
+/* harmony export */ });
+/* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./http */ "./resources/js/services/http.js");
+
+function getSetting() {
+  return (0,_http__WEBPACK_IMPORTED_MODULE_0__.http)().get('/setting').then(function (response) {
+    console.log(response);
+    return response.data;
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/stores/index.js":
 /*!**************************************!*\
   !*** ./resources/js/stores/index.js ***!
@@ -6216,14 +6323,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "store": () => (/* binding */ store)
 /* harmony export */ });
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user */ "./resources/js/stores/user.js");
+/* harmony import */ var _setting__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./setting */ "./resources/js/stores/setting.js");
 
 
-var reducers = (0,redux__WEBPACK_IMPORTED_MODULE_1__.combineReducers)({
-  user: _user__WEBPACK_IMPORTED_MODULE_0__.userReducer
+
+var reducers = (0,redux__WEBPACK_IMPORTED_MODULE_2__.combineReducers)({
+  user: _user__WEBPACK_IMPORTED_MODULE_0__.userReducer,
+  setting: _setting__WEBPACK_IMPORTED_MODULE_1__.settingReducer
 });
-var store = (0,redux__WEBPACK_IMPORTED_MODULE_1__.createStore)(reducers, {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+var store = (0,redux__WEBPACK_IMPORTED_MODULE_2__.createStore)(reducers, {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+/***/ }),
+
+/***/ "./resources/js/stores/setting.js":
+/*!****************************************!*\
+  !*** ./resources/js/stores/setting.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "settingReducer": () => (/* binding */ settingReducer)
+/* harmony export */ });
+/* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constant */ "./resources/js/constant.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var initState = {
+  setting: {}
+};
+var settingReducer = function settingReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;
+
+  var _ref = arguments.length > 1 ? arguments[1] : undefined,
+      type = _ref.type,
+      payload = _ref.payload;
+
+  switch (type) {
+    case _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_APP_SETTING:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        setting: payload
+      });
+
+    default:
+      return state;
+  }
+};
 
 /***/ }),
 
@@ -6370,8 +6522,6 @@ var userReducer = function userReducer() {
 	     */
 	    var AES = C_algo.AES = BlockCipher.extend({
 	        _doReset: function () {
-	            var t;
-
 	            // Skip reset of nRounds has been set before and key did not change
 	            if (this._nRounds && this._keyPriorReset === this._key) {
 	                return;
@@ -6394,7 +6544,7 @@ var userReducer = function userReducer() {
 	                if (ksRow < keySize) {
 	                    keySchedule[ksRow] = keyWords[ksRow];
 	                } else {
-	                    t = keySchedule[ksRow - 1];
+	                    var t = keySchedule[ksRow - 1];
 
 	                    if (!(ksRow % keySize)) {
 	                        // Rot word
@@ -6866,19 +7016,17 @@ var userReducer = function userReducer() {
 	        });
 
 	        function xorBlock(words, offset, blockSize) {
-	            var block;
-
 	            // Shortcut
 	            var iv = this._iv;
 
 	            // Choose mixing block
 	            if (iv) {
-	                block = iv;
+	                var block = iv;
 
 	                // Remove IV for subsequent blocks
 	                this._iv = undefined;
 	            } else {
-	                block = this._prevBlock;
+	                var block = this._prevBlock;
 	            }
 
 	            // XOR blocks
@@ -6970,8 +7118,6 @@ var userReducer = function userReducer() {
 	        }),
 
 	        reset: function () {
-	            var modeCreator;
-
 	            // Reset cipher
 	            Cipher.reset.call(this);
 
@@ -6982,9 +7128,9 @@ var userReducer = function userReducer() {
 
 	            // Reset block mode
 	            if (this._xformMode == this._ENC_XFORM_MODE) {
-	                modeCreator = mode.createEncryptor;
+	                var modeCreator = mode.createEncryptor;
 	            } else /* if (this._xformMode == this._DEC_XFORM_MODE) */ {
-	                modeCreator = mode.createDecryptor;
+	                var modeCreator = mode.createDecryptor;
 	                // Keep at least one block in the buffer for unpadding
 	                this._minBufferSize = 1;
 	            }
@@ -7002,8 +7148,6 @@ var userReducer = function userReducer() {
 	        },
 
 	        _doFinalize: function () {
-	            var finalProcessedBlocks;
-
 	            // Shortcut
 	            var padding = this.cfg.padding;
 
@@ -7013,10 +7157,10 @@ var userReducer = function userReducer() {
 	                padding.pad(this._data, this.blockSize);
 
 	                // Process final blocks
-	                finalProcessedBlocks = this._process(!!'flush');
+	                var finalProcessedBlocks = this._process(!!'flush');
 	            } else /* if (this._xformMode == this._DEC_XFORM_MODE) */ {
 	                // Process final blocks
-	                finalProcessedBlocks = this._process(!!'flush');
+	                var finalProcessedBlocks = this._process(!!'flush');
 
 	                // Unpad data
 	                padding.unpad(finalProcessedBlocks);
@@ -7108,17 +7252,15 @@ var userReducer = function userReducer() {
 	         *     var openSSLString = CryptoJS.format.OpenSSL.stringify(cipherParams);
 	         */
 	        stringify: function (cipherParams) {
-	            var wordArray;
-
 	            // Shortcuts
 	            var ciphertext = cipherParams.ciphertext;
 	            var salt = cipherParams.salt;
 
 	            // Format
 	            if (salt) {
-	                wordArray = WordArray.create([0x53616c74, 0x65645f5f]).concat(salt).concat(ciphertext);
+	                var wordArray = WordArray.create([0x53616c74, 0x65645f5f]).concat(salt).concat(ciphertext);
 	            } else {
-	                wordArray = ciphertext;
+	                var wordArray = ciphertext;
 	            }
 
 	            return wordArray.toString(Base64);
@@ -7138,8 +7280,6 @@ var userReducer = function userReducer() {
 	         *     var cipherParams = CryptoJS.format.OpenSSL.parse(openSSLString);
 	         */
 	        parse: function (openSSLStr) {
-	            var salt;
-
 	            // Parse base64
 	            var ciphertext = Base64.parse(openSSLStr);
 
@@ -7149,7 +7289,7 @@ var userReducer = function userReducer() {
 	            // Test for salt
 	            if (ciphertextWords[0] == 0x53616c74 && ciphertextWords[1] == 0x65645f5f) {
 	                // Extract salt
-	                salt = WordArray.create(ciphertextWords.slice(2, 4));
+	                var salt = WordArray.create(ciphertextWords.slice(2, 4));
 
 	                // Remove salt from ciphertext
 	                ciphertextWords.splice(0, 4);
@@ -7410,7 +7550,7 @@ var userReducer = function userReducer() {
 /*!****************************************!*\
   !*** ./node_modules/crypto-js/core.js ***!
   \****************************************/
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 ;(function (root, factory) {
 	if (true) {
@@ -7420,68 +7560,15 @@ var userReducer = function userReducer() {
 	else {}
 }(this, function () {
 
-	/*globals window, global, require*/
-
 	/**
 	 * CryptoJS core components.
 	 */
 	var CryptoJS = CryptoJS || (function (Math, undefined) {
-
-	    var crypto;
-
-	    // Native crypto from window (Browser)
-	    if (typeof window !== 'undefined' && window.crypto) {
-	        crypto = window.crypto;
-	    }
-
-	    // Native (experimental IE 11) crypto from window (Browser)
-	    if (!crypto && typeof window !== 'undefined' && window.msCrypto) {
-	        crypto = window.msCrypto;
-	    }
-
-	    // Native crypto from global (NodeJS)
-	    if (!crypto && typeof __webpack_require__.g !== 'undefined' && __webpack_require__.g.crypto) {
-	        crypto = __webpack_require__.g.crypto;
-	    }
-
-	    // Native crypto import via require (NodeJS)
-	    if (!crypto && "function" === 'function') {
-	        try {
-	            crypto = __webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'crypto'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	        } catch (err) {}
-	    }
-
 	    /*
-	     * Cryptographically secure pseudorandom number generator
-	     *
-	     * As Math.random() is cryptographically not safe to use
-	     */
-	    var cryptoSecureRandomInt = function () {
-	        if (crypto) {
-	            // Use getRandomValues method (Browser)
-	            if (typeof crypto.getRandomValues === 'function') {
-	                try {
-	                    return crypto.getRandomValues(new Uint32Array(1))[0];
-	                } catch (err) {}
-	            }
-
-	            // Use randomBytes method (NodeJS)
-	            if (typeof crypto.randomBytes === 'function') {
-	                try {
-	                    return crypto.randomBytes(4).readInt32LE();
-	                } catch (err) {}
-	            }
-	        }
-
-	        throw new Error('Native crypto module could not be used to get secure random number.');
-	    };
-
-	    /*
-	     * Local polyfill of Object.create
-
+	     * Local polyfil of Object.create
 	     */
 	    var create = Object.create || (function () {
-	        function F() {}
+	        function F() {};
 
 	        return function (obj) {
 	            var subtype;
@@ -7764,8 +7851,26 @@ var userReducer = function userReducer() {
 	        random: function (nBytes) {
 	            var words = [];
 
-	            for (var i = 0; i < nBytes; i += 4) {
-	                words.push(cryptoSecureRandomInt());
+	            var r = (function (m_w) {
+	                var m_w = m_w;
+	                var m_z = 0x3ade68b1;
+	                var mask = 0xffffffff;
+
+	                return function () {
+	                    m_z = (0x9069 * (m_z & 0xFFFF) + (m_z >> 0x10)) & mask;
+	                    m_w = (0x4650 * (m_w & 0xFFFF) + (m_w >> 0x10)) & mask;
+	                    var result = ((m_z << 0x10) + m_w) & mask;
+	                    result /= 0x100000000;
+	                    result += 0.5;
+	                    return result * (Math.random() > .5 ? 1 : -1);
+	                }
+	            });
+
+	            for (var i = 0, rcache; i < nBytes; i += 4) {
+	                var _r = r((rcache || Math.random()) * 0x100000000);
+
+	                rcache = _r() * 0x3ade67b7;
+	                words.push((_r() * 0x100000000) | 0);
 	            }
 
 	            return new WordArray.init(words, nBytes);
@@ -7996,8 +8101,6 @@ var userReducer = function userReducer() {
 	         *     var processedData = bufferedBlockAlgorithm._process(!!'flush');
 	         */
 	        _process: function (doFlush) {
-	            var processedWords;
-
 	            // Shortcuts
 	            var data = this._data;
 	            var dataWords = data.words;
@@ -8030,7 +8133,7 @@ var userReducer = function userReducer() {
 	                }
 
 	                // Remove processed words
-	                processedWords = dataWords.splice(0, nWordsReady);
+	                var processedWords = dataWords.splice(0, nWordsReady);
 	                data.sigBytes -= nBytesReady;
 	            }
 
@@ -8327,8 +8430,7 @@ var userReducer = function userReducer() {
 	          if (i % 4) {
 	              var bits1 = reverseMap[base64Str.charCodeAt(i - 1)] << ((i % 4) * 2);
 	              var bits2 = reverseMap[base64Str.charCodeAt(i)] >>> (6 - (i % 4) * 2);
-	              var bitsCombined = bits1 | bits2;
-	              words[nBytes >>> 2] |= bitsCombined << (24 - (nBytes % 4) * 8);
+	              words[nBytes >>> 2] |= (bits1 | bits2) << (24 - (nBytes % 4) * 8);
 	              nBytes++;
 	          }
 	      }
@@ -8563,8 +8665,6 @@ var userReducer = function userReducer() {
 	         *     var key = kdf.compute(password, salt);
 	         */
 	        compute: function (password, salt) {
-	            var block;
-
 	            // Shortcut
 	            var cfg = this.cfg;
 
@@ -8584,7 +8684,7 @@ var userReducer = function userReducer() {
 	                if (block) {
 	                    hasher.update(block);
 	                }
-	                block = hasher.update(password).finalize(salt);
+	                var block = hasher.update(password).finalize(salt);
 	                hasher.reset();
 
 	                // Iterations
@@ -9261,19 +9361,17 @@ var userReducer = function userReducer() {
 	    });
 
 	    function generateKeystreamAndEncrypt(words, offset, blockSize, cipher) {
-	        var keystream;
-
 	        // Shortcut
 	        var iv = this._iv;
 
 	        // Generate keystream
 	        if (iv) {
-	            keystream = iv.slice(0);
+	            var keystream = iv.slice(0);
 
 	            // Remove IV for subsequent blocks
 	            this._iv = undefined;
 	        } else {
-	            keystream = this._prevBlock;
+	            var keystream = this._prevBlock;
 	        }
 	        cipher.encryptBlock(keystream, 0);
 
@@ -9773,12 +9871,10 @@ var userReducer = function userReducer() {
 
 	        // Unpad
 	        var i = data.sigBytes - 1;
-	        for (var i = data.sigBytes - 1; i >= 0; i--) {
-	            if (((dataWords[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff)) {
-	                data.sigBytes = i + 1;
-	                break;
-	            }
+	        while (!((dataWords[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff)) {
+	            i--;
 	        }
+	        data.sigBytes = i + 1;
 	    }
 	};
 
@@ -11341,9 +11437,6 @@ var userReducer = function userReducer() {
 
 	                // Rho Pi
 	                for (var laneIndex = 1; laneIndex < 25; laneIndex++) {
-	                    var tMsw;
-	                    var tLsw;
-
 	                    // Shortcuts
 	                    var lane = state[laneIndex];
 	                    var laneMsw = lane.high;
@@ -11352,11 +11445,11 @@ var userReducer = function userReducer() {
 
 	                    // Rotate lanes
 	                    if (rhoOffset < 32) {
-	                        tMsw = (laneMsw << rhoOffset) | (laneLsw >>> (32 - rhoOffset));
-	                        tLsw = (laneLsw << rhoOffset) | (laneMsw >>> (32 - rhoOffset));
+	                        var tMsw = (laneMsw << rhoOffset) | (laneLsw >>> (32 - rhoOffset));
+	                        var tLsw = (laneLsw << rhoOffset) | (laneMsw >>> (32 - rhoOffset));
 	                    } else /* if (rhoOffset >= 32) */ {
-	                        tMsw = (laneLsw << (rhoOffset - 32)) | (laneMsw >>> (64 - rhoOffset));
-	                        tLsw = (laneMsw << (rhoOffset - 32)) | (laneLsw >>> (64 - rhoOffset));
+	                        var tMsw = (laneLsw << (rhoOffset - 32)) | (laneMsw >>> (64 - rhoOffset));
+	                        var tLsw = (laneMsw << (rhoOffset - 32)) | (laneLsw >>> (64 - rhoOffset));
 	                    }
 
 	                    // Transpose lanes
@@ -11391,7 +11484,7 @@ var userReducer = function userReducer() {
 	                var lane = state[0];
 	                var roundConstant = ROUND_CONSTANTS[round];
 	                lane.high ^= roundConstant.high;
-	                lane.low  ^= roundConstant.low;
+	                lane.low  ^= roundConstant.low;;
 	            }
 	        },
 
@@ -11723,16 +11816,13 @@ var userReducer = function userReducer() {
 
 	            // Rounds
 	            for (var i = 0; i < 80; i++) {
-	                var Wil;
-	                var Wih;
-
 	                // Shortcut
 	                var Wi = W[i];
 
 	                // Extend message
 	                if (i < 16) {
-	                    Wih = Wi.high = M[offset + i * 2]     | 0;
-	                    Wil = Wi.low  = M[offset + i * 2 + 1] | 0;
+	                    var Wih = Wi.high = M[offset + i * 2]     | 0;
+	                    var Wil = Wi.low  = M[offset + i * 2 + 1] | 0;
 	                } else {
 	                    // Gamma0
 	                    var gamma0x  = W[i - 15];
@@ -11757,12 +11847,12 @@ var userReducer = function userReducer() {
 	                    var Wi16h = Wi16.high;
 	                    var Wi16l = Wi16.low;
 
-	                    Wil = gamma0l + Wi7l;
-	                    Wih = gamma0h + Wi7h + ((Wil >>> 0) < (gamma0l >>> 0) ? 1 : 0);
-	                    Wil = Wil + gamma1l;
-	                    Wih = Wih + gamma1h + ((Wil >>> 0) < (gamma1l >>> 0) ? 1 : 0);
-	                    Wil = Wil + Wi16l;
-	                    Wih = Wih + Wi16h + ((Wil >>> 0) < (Wi16l >>> 0) ? 1 : 0);
+	                    var Wil = gamma0l + Wi7l;
+	                    var Wih = gamma0h + Wi7h + ((Wil >>> 0) < (gamma0l >>> 0) ? 1 : 0);
+	                    var Wil = Wil + gamma1l;
+	                    var Wih = Wih + gamma1h + ((Wil >>> 0) < (gamma1l >>> 0) ? 1 : 0);
+	                    var Wil = Wil + Wi16l;
+	                    var Wih = Wih + Wi16h + ((Wil >>> 0) < (Wi16l >>> 0) ? 1 : 0);
 
 	                    Wi.high = Wih;
 	                    Wi.low  = Wil;
@@ -12636,20 +12726,11 @@ var userReducer = function userReducer() {
 	            // Shortcuts
 	            var key = this._key;
 	            var keyWords = key.words;
-	            // Make sure the key length is valid (64, 128 or >= 192 bit)
-	            if (keyWords.length !== 2 && keyWords.length !== 4 && keyWords.length < 6) {
-	                throw new Error('Invalid key length - 3DES requires the key length to be 64, 128, 192 or >192.');
-	            }
-
-	            // Extend the key according to the keying options defined in 3DES standard
-	            var key1 = keyWords.slice(0, 2);
-	            var key2 = keyWords.length < 4 ? keyWords.slice(0, 2) : keyWords.slice(2, 4);
-	            var key3 = keyWords.length < 6 ? keyWords.slice(0, 2) : keyWords.slice(4, 6);
 
 	            // Create DES instances
-	            this._des1 = DES.createEncryptor(WordArray.create(key1));
-	            this._des2 = DES.createEncryptor(WordArray.create(key2));
-	            this._des3 = DES.createEncryptor(WordArray.create(key3));
+	            this._des1 = DES.createEncryptor(WordArray.create(keyWords.slice(0, 2)));
+	            this._des2 = DES.createEncryptor(WordArray.create(keyWords.slice(2, 4)));
+	            this._des3 = DES.createEncryptor(WordArray.create(keyWords.slice(4, 6)));
 	        },
 
 	        encryptBlock: function (M, offset) {

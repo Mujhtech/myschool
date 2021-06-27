@@ -13,6 +13,7 @@ function Login(props) {
     const dispatch = useDispatch();
     const { addToast } = useToasts();
 
+
     const errorsMessage = (errors) => {
         for (const key in errors) {
             addToast(errors[key][0], { appearance: 'error' });
@@ -28,7 +29,7 @@ function Login(props) {
             const response = await login({email: email, password: password, remember_me: false});
             dispatch(setLogin(response.user));
             setLoading(false);
-            props.history.push('/');
+            //props.history.push('/');
 
         } catch (err) {
             setLoading(false);
@@ -73,7 +74,7 @@ function Login(props) {
                                                             <div className="form-group">
                                                                 <label className="control-label">Email*</label>
                                                                 <input type="email" className="form-control"
-                                                                       placeholder="Email Address" onChange={(e) => setEmail(e.target.value)}/>
+                                                                       placeholder="Email Address" disabled={loading} onChange={(e) => setEmail(e.target.value)}/>
 
                                                             </div>
                                                         </div>
@@ -81,7 +82,7 @@ function Login(props) {
                                                             <div className="form-group">
                                                                 <label className="control-label">Password*</label>
                                                                 <input type="password" className="form-control"
-                                                                       placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                                                                       placeholder="Password" disabled={loading} onChange={(e) => setPassword(e.target.value)}/>
 
                                                             </div>
                                                         </div>
@@ -99,7 +100,7 @@ function Login(props) {
                                                             </div>
                                                         </div>
                                                         <div className="col-12 mt-3">
-                                                            <button disable="{loading}" type="submit"
+                                                            <button disabled={loading} type="submit"
                                                                     className="btn btn-primary text-uppercase">{loading ? 'Loading..' : 'Sign In' }
                                                             </button>
                                                         </div>
