@@ -2,24 +2,30 @@ import { React, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { login } from "../../services/auth";
 import { setLogin } from "../../actions/user";
-import { userReducer } from "../../stores/user";
 import { useDispatch } from 'react-redux';
+import { useToasts } from 'react-toast-notifications';
 
 function Login(props) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [errors, setErrors] = useState({});
-    const [errorMessage, setErrorMessage] = useState("");
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
+    const { addToast } = useToasts();
+
+    const errorsMessage = (errors) => {
+        for (const key in errors) {
+            addToast(errors[key][0], { appearance: 'error' });
+        }
+    }
+
+
 
     const loggedIn = async (e) => {
         e.preventDefault();
         try {
             setLoading(true);
             const response = await login({email: email, password: password, remember_me: false});
-            console.log(response.user);
             dispatch(setLogin(response.user));
             setLoading(false);
             props.history.push('/');
@@ -29,13 +35,13 @@ function Login(props) {
             if(!err.response) return;
             switch (err.response.status) {
               case 422:
-                setErrors(err.response.data.errors);
+                errorsMessage(err.response.data.errors);
                 break
               case 401:
-                setErrorMessage(err.response.data.message);
+                addToast(err.response.data.message, { appearance: 'error' });
                 break
               case 500:
-                setErrorMessage(err.response.data.message);
+                addToast(err.response.data.message, { appearance: 'error' });
                 break
               default:
                 break

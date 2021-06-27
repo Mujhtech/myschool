@@ -29,5 +29,8 @@
         "redux": "^4.1.0",
         "react-redux": "^7.2.4",
         "crypto-js": "^4.0.0"
+    },
+    "dependencies": {
+        "react-toast-notifications": "^2.4.4"
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Storage;
 
 class User extends Authenticatable
 {
@@ -43,13 +44,13 @@ class User extends Authenticatable
     ];
 
 
-    public function getProfileUser()
-    {
-        return $this->avatar ? $this->avatar : 'https://ui-avatars.com/api/?name='.urlencode($this->fullname).'&color=7F9CF5&background=EBF4FF';
-    }
-    
-
     public function setPasswordAttribute($value) {
         $this->attributes['password'] = bcrypt($value);
+    }
+
+
+    public function getProfilePhotoUrlAttribute()
+    {
+        return $this->avatar ? Storage::url($this->avatar) : 'https://ui-avatars.com/api/?name='.urlencode($this->fullname).'&color=7F9CF5&background=EBF4FF';
     }
 }

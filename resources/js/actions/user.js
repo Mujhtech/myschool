@@ -6,3 +6,10 @@ export const setLogin = (user) => {
         payload: user
     }
 }
+
+export const setProfile = (user) => {
+    return {
+        type: Constant.SET_USER_PROFILE,
+        payload: user
+    }
+}

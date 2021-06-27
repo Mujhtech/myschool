@@ -8,6 +8,7 @@ use App\Models\User;
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Resources\UserResource;
 
 class AuthController extends Controller
 {
@@ -25,7 +26,7 @@ class AuthController extends Controller
                 'message' => 'Invalid username/password',
                 'status' => 500
             ], 500);
-            
+
         }
 
         $user = $request->user();
@@ -40,7 +41,7 @@ class AuthController extends Controller
 
         if ($token->save()){
             return response()->json([
-                'user' => $user,
+                'user' => UserResource::make($user),
                 'access_token' => $tokenData->accessToken,
                 'token_type' => 'Bearer',
                 'token_scope' => $tokenData->token->scope[0],
@@ -65,7 +66,7 @@ class AuthController extends Controller
 
     public function profile(Request $request){
         if ($request->user()){
-            return response()->json($request->user(), 200);
+            return response()->json(UserResource::make($request->user()), 200);
         } else {
             return response()->json([
                 'message' => 'Not logged in',
