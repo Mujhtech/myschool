@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Nav() {
+
+    const user = useSelector((state) => state.user);
+
+
+    useEffect(() => {
+
+    }, []);
+
+
+
     return (
         <header className="app-header top-bar">
             <nav className="navbar navbar-expand-md">
@@ -62,91 +74,17 @@ function Nav() {
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <img className="img-fluid" src="../assets/img/avtar/01.jpg"
-                                                                     alt="user" />
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">Jimmyimg Leyon</p>
-                                                                <small>Okay</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <img className="img-fluid" src="assets/img/avtar/02.jpg"
-                                                                     alt="user2" />
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">Brainjon Leyon</p>
-                                                                <small>So, make the decision...</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <img className="img-fluid" src="assets/img/avtar/04.jpg"
-                                                                     alt="user4" />
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">Smithmin Leyon</p>
-                                                                <small>Thanks</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <img className="img-fluid" src="assets/img/avtar/05.jpg"
-                                                                     alt="user5" />
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">Jennyns Leyon</p>
-                                                                <small>How are you</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <img className="img-fluid" src="assets/img/avtar/06.jpg"
-                                                                     alt="user6" />
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">Demian Leyon</p>
-                                                                <small>I like your themes</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
+                                                
                                             </ul>
                                         </li>
                                         <li className="dropdown-footer">
-                                            <a className="font-13" href="javascript:void(0)"> View All messages </a>
+                                            <a className="font-13" href={void(0)}> View All messages </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown3"
+                                <a className="nav-link dropdown-toggle" href={void(0)} id="navbarDropdown3"
                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i className="fe fe-bell"></i>
                                     <span className="notify">
@@ -164,72 +102,9 @@ function Nav() {
                                         </li>
                                         <li className="dropdown-body min-h-240 nicescroll">
                                             <ul className="scrollbar scroll_dark max-h-240">
+                                                
                                                 <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <div className="bg-type bg-type-md">
-                                                                    <span>HY</span>
-                                                                </div>
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">New registered user</p>
-                                                                <small>Just now</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <div className="bg-type bg-type-md bg-success">
-                                                                    <span>GM</span>
-                                                                </div>
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">New invoice received</p>
-                                                                <small>22 min</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <div className="bg-type bg-type-md bg-danger">
-                                                                    <span>FR</span>
-                                                                </div>
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">Server error report</p>
-                                                                <small>7 min</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <div
-                                                            className="notification d-flex flex-row align-items-center">
-                                                            <div className="notify-icon bg-img align-self-center">
-                                                                <div className="bg-type bg-type-md bg-info">
-                                                                    <span>HT</span>
-                                                                </div>
-                                                            </div>
-                                                            <div className="notify-message">
-                                                                <p className="font-weight-bold">Database report</p>
-                                                                <small>1 day</small>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">
+                                                    <a href={void(0)}>
                                                         <div
                                                             className="notification d-flex flex-row align-items-center">
                                                             <div className="notify-icon bg-img align-self-center">
@@ -257,31 +132,30 @@ function Nav() {
                             <li className="nav-item dropdown user-profile">
                                 <a href={void(0)} className="nav-link dropdown-toggle " id="navbarDropdown4"
                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="{{ Auth::user()->getProfileUser() }}" alt="avtar-img" />
+                                    <img src={user.user.avatar} alt="avtar-img" />
                                         <span className="bg-success user-status"></span>
                                 </a>
                                 <div className="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
                                     <div className="bg-gradient px-4 py-3">
                                         <div className="d-flex align-items-center justify-content-between">
                                             <div className="mr-1">
-                                                <h4 className="text-white mb-0">Mujeeb</h4>
-                                                <small className="text-white">email</small>
+                                                <h4 className="text-white mb-0">{user.user.fullname}</h4>
+                                                <small className="text-white">{user.user.email}</small>
                                             </div>
-                                            <a href="{{ route('logout') }}"
-                                               className="text-white font-20 tooltip-wrapper" data-toggle="tooltip"
+                                            <Link to="/auth/logout" className="text-white font-20 tooltip-wrapper" data-toggle="tooltip"
                                                data-placement="top" title="" data-original-title="Logout"> <i
-                                                className="zmdi zmdi-power"></i></a>
+                                                className="zmdi zmdi-power"></i></Link>
                                         </div>
                                     </div>
                                     <div className="p-4">
-                                        <a className="dropdown-item d-flex nav-link" href="{{ route('profile') }}">
-                                            <i className="fa fa-user pr-2 text-success"></i> Profile</a>
-                                        <a className="dropdown-item d-flex nav-link" href="{{ route('settings') }}">
+                                        <Link className="dropdown-item d-flex nav-link" to="/profile">
+                                            <i className="fa fa-user pr-2 text-success"></i> Profile</Link>
+                                        <Link className="dropdown-item d-flex nav-link" to="/setting">
                                             <i className=" ti ti-settings pr-2 text-info"></i> Settings
-                                        </a>
-                                        <a className="dropdown-item d-flex nav-link" href="{{ route('locked') }}">
+                                        </Link>
+                                        <Link className="dropdown-item d-flex nav-link" href="{{ route('locked') }}">
                                             <i className=" ti ti-settings pr-2 text-info"></i> Locked
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </li>

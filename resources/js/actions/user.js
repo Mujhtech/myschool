@@ -13,3 +13,10 @@ export const setProfile = (user) => {
         payload: user
     }
 }
+
+export const setUserLogout = () => {
+    return {
+        type: Constant.SET_USER_LOGOUT,
+        payload: {}
+    }
+}

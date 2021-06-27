@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import Nav from "./Nav";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import dashboard from "../routes/dashboard";
+import FancyRoute from "./FancyRoute";
 
 function Home() {
     return (

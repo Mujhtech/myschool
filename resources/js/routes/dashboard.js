@@ -15,6 +15,12 @@ const dashboard = [
         exact: true,
         component: SettingIndex,
         protected: true
+    },
+    {
+        title: 'Page Not Found',
+        path: '*',
+        component: () => <div>You are lost</div>,
+        protected: false
     }
 ]
 

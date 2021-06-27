@@ -10,6 +10,8 @@ export const userReducer = (state = userInitState, {type, payload}) => {
             return {...state, user: payload, isLoggedIn: true }
         case Constant.SET_USER_PROFILE:
             return {...state, user: payload, isLoggedIn: true }
+        case Constant.SET_USER_LOGOUT:
+            return {...state, user: {}, isLoggedIn: false }
         default:
             return state;
     }
