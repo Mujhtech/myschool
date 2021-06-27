@@ -1,47 +1,20 @@
-import Login from "../components/auths/Login";
-import Home from "../components/Home";
-import ForgotPassword from "../components/auths/ForgotPassword";
-import Otp from "../components/auths/Otp";
-import Locked from "../components/auths/Locked";
-import NoMatch from "../components/errors/NoMatch";
+import SettingIndex from '../components/setting/Index';
+import DashboardIndex from '../components/dashboard/Index';
 
 const dashboard = [
     {
         title: 'Dashboard',
         path: '/',
         exact: true,
-        component: Home,
+        component: DashboardIndex,
         protected: true
     },
     {
-        title: 'Login',
-        path: '/auth/login',
-        component: Login,
-        protected: false
-    },
-    {
-        title: 'Forgot Password',
-        path: '/auth/forgot-password',
-        component: ForgotPassword,
-        protected: false
-    },
-    {
-        title: 'Verify Account',
-        path: '/auth/otp',
-        component: Otp,
-        protected: false
-    },
-    {
-        title: 'Locked',
-        path: '/auth/locked',
-        component: Locked,
+        title: 'Setting',
+        path: '/setting',
+        exact: true,
+        component: SettingIndex,
         protected: true
-    },
-    {
-        title: 'Page Not Found',
-        path: '*',
-        component: NoMatch,
-        protected: false
     }
 ]
 

@@ -29,7 +29,7 @@ function Login(props) {
             const response = await login({email: email, password: password, remember_me: false});
             dispatch(setLogin(response.user));
             setLoading(false);
-            //props.history.push('/');
+            props.history.push('/');
 
         } catch (err) {
             setLoading(false);

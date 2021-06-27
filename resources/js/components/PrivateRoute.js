@@ -8,7 +8,7 @@ import { useToasts } from 'react-toast-notifications';
 
 const PrivateRoute = ({ children, ...rest }) => {
 
-    const loggedIn = useSelector((state) => state.user.isLoggedIn);
+    const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const { addToast } = useToasts();
 
@@ -29,11 +29,18 @@ const PrivateRoute = ({ children, ...rest }) => {
 
         fetchUserProfile();
 
-    }, [ loggedIn ]);
+    }, []);
+
+
+    useEffect(() => {
+
+        console.log(user.isLoggedIn);
+
+    }, [dispatch, user]);
 
     return (
         <Route {...rest} render={({ location }) => {
-          return loggedIn === true
+          return user.isLoggedIn === true
             ? children
             : <Redirect to={{
                 pathname: '/auth/login',

@@ -4344,7 +4344,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _SideBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SideBar */ "./resources/js/components/SideBar.js");
 /* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./resources/js/components/Nav.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _routes_dashboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../routes/dashboard */ "./resources/js/routes/dashboard.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 
 
 
@@ -4352,20 +4363,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Home() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "app",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "app-wrap",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Nav__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "app-container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_SideBar__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "app-main",
-          id: "main",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            className: "container-fluid"
-          })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "app",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "app-wrap",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Nav__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "app-container",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_SideBar__WEBPACK_IMPORTED_MODULE_1__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "app-main",
+            id: "main",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "container-fluid",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Switch, {
+                children: _routes_dashboard__WEBPACK_IMPORTED_MODULE_3__.default.map(function (route, index) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(FancyRoute, _objectSpread({}, route), index);
+                })
+              })
+            })
+          })]
         })]
-      })]
+      })
     })
   });
 }
@@ -4938,8 +4956,8 @@ var PrivateRoute = function PrivateRoute(_ref) {
   var children = _ref.children,
       rest = _objectWithoutProperties(_ref, ["children"]);
 
-  var loggedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
-    return state.user.isLoggedIn;
+  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
+    return state.user;
   });
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
 
@@ -4986,11 +5004,14 @@ var PrivateRoute = function PrivateRoute(_ref) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     fetchUserProfile();
-  }, [loggedIn]);
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    console.log(user.isLoggedIn);
+  }, [dispatch, user]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, _objectSpread(_objectSpread({}, rest), {}, {
     render: function render(_ref3) {
       var location = _ref3.location;
-      return loggedIn === true ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Redirect, {
+      return user.isLoggedIn === true ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Redirect, {
         to: {
           pathname: '/auth/login',
           state: {
@@ -5522,53 +5543,53 @@ function Login(props) {
             case 5:
               response = _context.sent;
               dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_3__.setLogin)(response.user));
-              setLoading(false); //props.history.push('/');
-
-              _context.next = 25;
+              setLoading(false);
+              props.history.push('/');
+              _context.next = 26;
               break;
 
-            case 10:
-              _context.prev = 10;
+            case 11:
+              _context.prev = 11;
               _context.t0 = _context["catch"](1);
               setLoading(false);
 
               if (_context.t0.response) {
-                _context.next = 15;
+                _context.next = 16;
                 break;
               }
 
               return _context.abrupt("return");
 
-            case 15:
+            case 16:
               _context.t1 = _context.t0.response.status;
-              _context.next = _context.t1 === 422 ? 18 : _context.t1 === 401 ? 20 : _context.t1 === 500 ? 22 : 24;
+              _context.next = _context.t1 === 422 ? 19 : _context.t1 === 401 ? 21 : _context.t1 === 500 ? 23 : 25;
               break;
 
-            case 18:
+            case 19:
               errorsMessage(_context.t0.response.data.errors);
-              return _context.abrupt("break", 25);
+              return _context.abrupt("break", 26);
 
-            case 20:
+            case 21:
               addToast(_context.t0.response.data.message, {
                 appearance: 'error'
               });
-              return _context.abrupt("break", 25);
+              return _context.abrupt("break", 26);
 
-            case 22:
+            case 23:
               addToast(_context.t0.response.data.message, {
                 appearance: 'error'
               });
-              return _context.abrupt("break", 25);
-
-            case 24:
-              return _context.abrupt("break", 25);
+              return _context.abrupt("break", 26);
 
             case 25:
+              return _context.abrupt("break", 26);
+
+            case 26:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[1, 10]]);
+      }, _callee, null, [[1, 11]]);
     }));
 
     return function loggedIn(_x) {
@@ -5802,6 +5823,32 @@ function Otp() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Otp);
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/Index.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/dashboard/Index.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function DashboardIndex() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "DashboardIndex"
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DashboardIndex);
 
 /***/ }),
 
@@ -6094,6 +6141,32 @@ function NoMatch() {
 
 /***/ }),
 
+/***/ "./resources/js/components/setting/Index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/setting/Index.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function SettingIndex() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "Setting"
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SettingIndex);
+
+/***/ }),
+
 /***/ "./resources/js/constant.js":
 /*!**********************************!*\
   !*** ./resources/js/constant.js ***!
@@ -6113,6 +6186,38 @@ var Constant = {
   SET_USER_PROFILE: "SET_USER_PROFILE",
   SET_APP_SETTING: "SET_APP_SETTING"
 };
+
+/***/ }),
+
+/***/ "./resources/js/routes/dashboard.js":
+/*!******************************************!*\
+  !*** ./resources/js/routes/dashboard.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _components_setting_Index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/setting/Index */ "./resources/js/components/setting/Index.js");
+/* harmony import */ var _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/dashboard/Index */ "./resources/js/components/dashboard/Index.js");
+
+
+var dashboard = [{
+  title: 'Dashboard',
+  path: '/',
+  exact: true,
+  component: _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_1__.default,
+  "protected": true
+}, {
+  title: 'Setting',
+  path: '/setting',
+  exact: true,
+  component: _components_setting_Index__WEBPACK_IMPORTED_MODULE_0__.default,
+  "protected": true
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dashboard);
 
 /***/ }),
 
