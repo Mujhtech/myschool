@@ -4,6 +4,7 @@ import { login } from "../../services/auth";
 import { setLogin } from "../../actions/user";
 import { useDispatch } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
+import Loading from '../Loading';
 
 function Login(props) {
 
@@ -102,7 +103,7 @@ function Login(props) {
                                                         </div>
                                                         <div className="col-12 mt-3">
                                                             <button disabled={loading} type="submit"
-                                                                    className="btn btn-primary text-uppercase">{loading ? 'Loading..' : 'Sign In' }
+                                                                    className="btn btn-primary text-uppercase">{loading ? <Loading /> : 'Sign In' }
                                                             </button>
                                                         </div>
                                                     </div>
