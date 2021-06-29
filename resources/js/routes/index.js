@@ -7,42 +7,42 @@ import NoMatch from "../components/errors/NoMatch";
 
 const routes = [
     {
-        title: 'Dashboard',
-        path: '/',
+        title: "Dashboard",
+        path: "/",
         exact: true,
         component: Home,
-        protected: true
+        protected: true,
     },
     {
-        title: 'Login',
-        path: '/auth/login',
+        title: "Login",
+        path: "/auth/login",
         component: Login,
-        protected: false
+        protected: false,
     },
     {
-        title: 'Forgot Password',
-        path: '/auth/forgot-password',
+        title: "Forgot Password",
+        path: "/auth/forgot-password",
         component: ForgotPassword,
-        protected: false
+        protected: false,
     },
     {
-        title: 'Verify Account',
-        path: '/auth/otp',
+        title: "Verify Account",
+        path: "/auth/otp",
         component: Otp,
-        protected: false
+        protected: false,
     },
     {
-        title: 'Locked',
-        path: '/auth/locked',
+        title: "Locked",
+        path: "/auth/locked",
         component: Locked,
-        protected: false
+        protected: true,
     },
     {
-        title: 'Page Not Found',
-        path: '*',
+        title: "Page Not Found",
+        path: "*",
         component: NoMatch,
-        protected: false
-    }
-]
+        protected: false,
+    },
+];
 
 export default routes;

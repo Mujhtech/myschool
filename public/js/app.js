@@ -6311,20 +6311,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var dashboard = [{
-  title: 'Dashboard',
-  path: '/',
+  title: "Dashboard",
+  path: "/",
   exact: true,
   component: _components_dashboard_Index__WEBPACK_IMPORTED_MODULE_1__.default,
   "protected": true
 }, {
-  title: 'Setting',
-  path: '/setting',
+  title: "Setting",
+  path: "/setting",
   exact: true,
   component: _components_setting_Index__WEBPACK_IMPORTED_MODULE_0__.default,
   "protected": true
 }, {
-  title: 'Page Not Found',
-  path: '*',
+  title: "Profile",
+  path: "/profile",
+  exact: true,
+  component: _components_setting_Index__WEBPACK_IMPORTED_MODULE_0__.default,
+  "protected": true
+}, {
+  title: "Page Not Found",
+  path: "*",
   component: function component() {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       children: "You are lost"
@@ -6360,34 +6366,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [{
-  title: 'Dashboard',
-  path: '/',
+  title: "Dashboard",
+  path: "/",
   exact: true,
   component: _components_Home__WEBPACK_IMPORTED_MODULE_1__.default,
   "protected": true
 }, {
-  title: 'Login',
-  path: '/auth/login',
+  title: "Login",
+  path: "/auth/login",
   component: _components_auths_Login__WEBPACK_IMPORTED_MODULE_0__.default,
   "protected": false
 }, {
-  title: 'Forgot Password',
-  path: '/auth/forgot-password',
+  title: "Forgot Password",
+  path: "/auth/forgot-password",
   component: _components_auths_ForgotPassword__WEBPACK_IMPORTED_MODULE_2__.default,
   "protected": false
 }, {
-  title: 'Verify Account',
-  path: '/auth/otp',
+  title: "Verify Account",
+  path: "/auth/otp",
   component: _components_auths_Otp__WEBPACK_IMPORTED_MODULE_3__.default,
   "protected": false
 }, {
-  title: 'Locked',
-  path: '/auth/locked',
+  title: "Locked",
+  path: "/auth/locked",
   component: _components_auths_Locked__WEBPACK_IMPORTED_MODULE_4__.default,
-  "protected": false
+  "protected": true
 }, {
-  title: 'Page Not Found',
-  path: '*',
+  title: "Page Not Found",
+  path: "*",
   component: _components_errors_NoMatch__WEBPACK_IMPORTED_MODULE_5__.default,
   "protected": false
 }];

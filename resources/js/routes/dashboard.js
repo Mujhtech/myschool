@@ -1,27 +1,34 @@
-import SettingIndex from '../components/setting/Index';
-import DashboardIndex from '../components/dashboard/Index';
+import SettingIndex from "../components/setting/Index";
+import DashboardIndex from "../components/dashboard/Index";
 
 const dashboard = [
     {
-        title: 'Dashboard',
-        path: '/',
+        title: "Dashboard",
+        path: "/",
         exact: true,
         component: DashboardIndex,
-        protected: true
+        protected: true,
     },
     {
-        title: 'Setting',
-        path: '/setting',
+        title: "Setting",
+        path: "/setting",
         exact: true,
         component: SettingIndex,
-        protected: true
+        protected: true,
     },
     {
-        title: 'Page Not Found',
-        path: '*',
+        title: "Profile",
+        path: "/profile",
+        exact: true,
+        component: SettingIndex,
+        protected: true,
+    },
+    {
+        title: "Page Not Found",
+        path: "*",
         component: () => <div>You are lost</div>,
-        protected: false
-    }
-]
+        protected: false,
+    },
+];
 
 export default dashboard;
