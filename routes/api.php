@@ -24,7 +24,7 @@ Route::get('/', function(){
 Route::group(['prefix' => 'auth'], function(){
     Route::post('otp', 'API\AuthController@otp');
     Route::post('login', 'API\AuthController@login');
-    Route::group(['middleware' => ['auth:api', 'locked']], function() {
+    Route::group(['middleware' => ['auth:api']], function() {
         Route::get('logout', 'API\AuthController@logout');
         Route::get('lock', 'API\AuthController@lockMe');    
         Route::post('unlock', 'API\AuthController@unLockMe');

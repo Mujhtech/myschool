@@ -1,7 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { unlockUser } from "../../services/auth";
+import { unlockUser as unlockUserAction } from "../../actions/user";
+import { useToasts } from 'react-toast-notifications';
 
-function Locked() {
+function Locked(props) {
+
+    const user = useSelector((state) => state.user);
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
+    const { addToast } = useToasts();
+
+    const errorsMessage = (errors) => {
+        for (const key in errors) {
+            addToast(errors[key][0], { appearance: 'error' });
+        }
+    }
+
+    const unlockMe = async (e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            const response = await unlockUser({password: password});
+            console.log(response);
+            dispatch(unlockUserAction(response.data));
+            setLoading(false);
+            addToast("Welcome back", { appearance: 'success' });
+            props.history.push('/');
+        } catch (err) {
+            setLoading(false);
+            if(!err.response) return;
+            switch (err.response.status) {
+              case 422:
+                errorsMessage(err.response.data.errors);
+                break
+              case 401:
+                addToast(err.response.data.message, { appearance: 'error' });
+                break
+              case 500:
+                addToast(err.response.data.message, { appearance: 'error' });
+                break
+              default:
+                break
+            }
+        }
+    };
+
+
     return (
         <div>
             <div className="app">
@@ -14,16 +61,18 @@ function Locked() {
                                         <div className="d-flex align-items-center h-100-vh">
                                             <div className="login p-50">
                                                 <h1 className="mb-2">We Are </h1>
-                                                <h4 className="mt-4">Mujeeb</h4>
+                                                <h4 className="mt-4">{user.user.fullname}</h4>
                                                 <span className="mt-1"><i className="fa fa-lock"></i> Locked</span>
                                                 <p className="mt-4 mb-0">You must enter your password to access</p>
-                                                <form className="mt-2 mt-sm-5">
+                                                <form className="mt-2 mt-sm-5" onSubmit={(e) => unlockMe(e)}>
                                                     <div className="row">
                                                         <div className="col-12">
                                                             <div className="input-group my-3">
                                                                 <input type="text" className="form-control"
                                                                        placeholder="Enter Password" aria-label=""
                                                                        aria-describedby="basic-addon2"
+                                                                       disabled={loading}
+                                                                       onChange={(e) => setPassword(e.target.value)}
                                                                        />
                                                                     <div className="input-group-append">
                                                                         <span className="input-group-text"
@@ -34,8 +83,8 @@ function Locked() {
                                                         </div>
 
                                                         <div className="col-12 mt-3">
-                                                            <button type="submit"
-                                                                    className="btn btn-primary text-uppercase">Unlock
+                                                            <button disabled={loading} type="submit"
+                                                                    className="btn btn-primary text-uppercase">{ loading ? 'Loading..' : 'Unlock' }
                                                             </button>
                                                         </div>
                                                     </div>

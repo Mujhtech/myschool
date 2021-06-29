@@ -22,7 +22,10 @@ class isLocked
 
         } else {
 
-            return redirect()->route('auth.locked');
+            return response()->json([
+                'message' => 'You are locked out',
+                'status' => 401
+            ], 401);
 
         }
     }

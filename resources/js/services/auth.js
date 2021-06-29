@@ -48,10 +48,10 @@ export function getProfile() {
     return http().get('/auth/profile');
 }
 
-export function lockedUser() {
+export function lockUser() {
     return http().get('/auth/lock');
 }
 
-export function unlockedUser(data) {
+export function unlockUser(data) {
     return http().post('/auth/unlock', data);
 }

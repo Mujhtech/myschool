@@ -4143,6 +4143,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "setLogin": () => (/* binding */ setLogin),
 /* harmony export */   "setProfile": () => (/* binding */ setProfile),
+/* harmony export */   "lockUser": () => (/* binding */ lockUser),
+/* harmony export */   "unlockUser": () => (/* binding */ unlockUser),
 /* harmony export */   "setUserLogout": () => (/* binding */ setUserLogout)
 /* harmony export */ });
 /* harmony import */ var _constant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constant */ "./resources/js/constant.js");
@@ -4156,6 +4158,18 @@ var setLogin = function setLogin(user) {
 var setProfile = function setProfile(user) {
   return {
     type: _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_PROFILE,
+    payload: user
+  };
+};
+var lockUser = function lockUser(user) {
+  return {
+    type: _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_LOCK,
+    payload: user
+  };
+};
+var unlockUser = function unlockUser(user) {
+  return {
+    type: _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_UNLOCK,
     payload: user
   };
 };
@@ -4300,31 +4314,27 @@ var FancyRoute = function FancyRoute(props) {
 
             case 3:
               response = _context.sent;
-              console.log(response);
               dispatch((0,_actions_setting__WEBPACK_IMPORTED_MODULE_8__.setSetting)(response.setting));
-              _context.next = 13;
+              _context.next = 11;
               break;
 
-            case 8:
-              _context.prev = 8;
+            case 7:
+              _context.prev = 7;
               _context.t0 = _context["catch"](0);
 
               if (_context.t0.response) {
-                _context.next = 12;
+                _context.next = 11;
                 break;
               }
 
               return _context.abrupt("return");
 
-            case 12:
-              console.log(_context.t0.response);
-
-            case 13:
+            case 11:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 8]]);
+      }, _callee, null, [[0, 7]]);
     }));
 
     return function fetchSetting() {
@@ -4345,33 +4355,32 @@ var FancyRoute = function FancyRoute(props) {
 
             case 3:
               response = _context2.sent;
-              console.log(response.data);
               dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_10__.setProfile)(response.data));
-              _context2.next = 14;
+              _context2.next = 13;
               break;
 
-            case 8:
-              _context2.prev = 8;
+            case 7:
+              _context2.prev = 7;
               _context2.t0 = _context2["catch"](0);
 
               if (_context2.t0.response) {
-                _context2.next = 12;
+                _context2.next = 11;
                 break;
               }
 
               return _context2.abrupt("return");
 
-            case 12:
+            case 11:
               localStorage.removeItem('laravelReactSpa');
               dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_10__.setUserLogout)()); //addToast(err.response.data.message, { appearance: 'error' });
               //console.log(err.response)
 
-            case 14:
+            case 13:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[0, 8]]);
+      }, _callee2, null, [[0, 7]]);
     }));
 
     return function fetchUserProfile() {
@@ -4381,17 +4390,17 @@ var FancyRoute = function FancyRoute(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(nprogress__WEBPACK_IMPORTED_MODULE_2___default().start());
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    fetchSetting();
-    fetchUserProfile();
     document.title = props.title;
     nprogress__WEBPACK_IMPORTED_MODULE_2___default().done();
     return function () {
+      fetchUserProfile();
+      fetchSetting();
       nprogress__WEBPACK_IMPORTED_MODULE_2___default().start();
     };
   }, []);
   return props["protected"] === true ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_5__.default, {
     path: props.path,
-    exact: true,
+    exact: props.exact,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(NewComponent, {})
   }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
     path: props.path,
@@ -4578,41 +4587,41 @@ function Nav() {
             case 0:
               _context2.prev = 0;
               _context2.next = 3;
-              return (0,_services_auth__WEBPACK_IMPORTED_MODULE_4__.lockedUser)();
+              return (0,_services_auth__WEBPACK_IMPORTED_MODULE_4__.lockUser)();
 
             case 3:
               response = _context2.sent;
-              console.log(response); //dispatch(setUserLogout());
-
+              console.log(response);
+              dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_3__.lockUser)(response.data));
               addToast("You are locked out", {
                 appearance: 'success'
               });
-              _context2.next = 14;
+              _context2.next = 15;
               break;
 
-            case 8:
-              _context2.prev = 8;
+            case 9:
+              _context2.prev = 9;
               _context2.t0 = _context2["catch"](0);
 
               if (_context2.t0.response) {
-                _context2.next = 12;
+                _context2.next = 13;
                 break;
               }
 
               return _context2.abrupt("return");
 
-            case 12:
+            case 13:
               console.log(_context2.t0.response.data.message);
               addToast(_context2.t0.response.data.message, {
                 appearance: 'error'
               });
 
-            case 14:
+            case 15:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[0, 8]]);
+      }, _callee2, null, [[0, 9]]);
     }));
 
     return function lockedUser() {
@@ -4951,15 +4960,19 @@ var PrivateRoute = function PrivateRoute(_ref) {
   var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.user;
   });
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    console.log(user.isLoggedIn);
-  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Route, _objectSpread(_objectSpread({}, rest), {}, {
     render: function render(_ref2) {
       var location = _ref2.location;
-      return user.isLoggedIn === true ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Redirect, {
+      if (user.isLoggedIn === true && user.isLocked === false) return children;else if (user.isLoggedIn === true && user.isLocked === true) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Redirect, {
         to: {
-          pathname: '/auth/login',
+          pathname: "/auth/locked",
+          state: {
+            from: location
+          }
+        }
+      });else return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Redirect, {
+        to: {
+          pathname: "/auth/login",
           state: {
             from: location
           }
@@ -5291,91 +5304,230 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _services_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth */ "./resources/js/services/auth.js");
+/* harmony import */ var _actions_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user */ "./resources/js/actions/user.js");
+/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-toast-notifications */ "./node_modules/react-toast-notifications/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
-function Locked() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+
+
+
+
+
+function Locked(props) {
+  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
+    return state.user;
+  });
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      password = _useState2[0],
+      setPassword = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
+
+  var _useToasts = (0,react_toast_notifications__WEBPACK_IMPORTED_MODULE_5__.useToasts)(),
+      addToast = _useToasts.addToast;
+
+  var errorsMessage = function errorsMessage(errors) {
+    for (var key in errors) {
+      addToast(errors[key][0], {
+        appearance: 'error'
+      });
+    }
+  };
+
+  var unlockMe = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(e) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              e.preventDefault();
+              _context.prev = 1;
+              setLoading(true);
+              _context.next = 5;
+              return (0,_services_auth__WEBPACK_IMPORTED_MODULE_3__.unlockUser)({
+                password: password
+              });
+
+            case 5:
+              response = _context.sent;
+              console.log(response);
+              dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_4__.unlockUser)(response.data));
+              setLoading(false);
+              addToast("Welcome back", {
+                appearance: 'success'
+              });
+              props.history.push('/');
+              _context.next = 28;
+              break;
+
+            case 13:
+              _context.prev = 13;
+              _context.t0 = _context["catch"](1);
+              setLoading(false);
+
+              if (_context.t0.response) {
+                _context.next = 18;
+                break;
+              }
+
+              return _context.abrupt("return");
+
+            case 18:
+              _context.t1 = _context.t0.response.status;
+              _context.next = _context.t1 === 422 ? 21 : _context.t1 === 401 ? 23 : _context.t1 === 500 ? 25 : 27;
+              break;
+
+            case 21:
+              errorsMessage(_context.t0.response.data.errors);
+              return _context.abrupt("break", 28);
+
+            case 23:
+              addToast(_context.t0.response.data.message, {
+                appearance: 'error'
+              });
+              return _context.abrupt("break", 28);
+
+            case 25:
+              addToast(_context.t0.response.data.message, {
+                appearance: 'error'
+              });
+              return _context.abrupt("break", 28);
+
+            case 27:
+              return _context.abrupt("break", 28);
+
+            case 28:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 13]]);
+    }));
+
+    return function unlockMe(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "app",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: "app-wrap",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "app-contant",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: "bg-white",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "container-fluid p-0",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                 className: "row no-gutters",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                   className: "col-sm-6 col-lg-5 col-xxl-3  align-self-center order-2 order-sm-1",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                     className: "d-flex align-items-center h-100-vh",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                       className: "login p-50",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
                         className: "mb-2",
                         children: "We Are "
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h4", {
                         className: "mt-4",
-                        children: "Mujeeb"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+                        children: user.user.fullname
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("span", {
                         className: "mt-1",
-                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                           className: "fa fa-lock"
                         }), " Locked"]
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
                         className: "mt-4 mb-0",
                         children: "You must enter your password to access"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("form", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("form", {
                         className: "mt-2 mt-sm-5",
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                        onSubmit: function onSubmit(e) {
+                          return unlockMe(e);
+                        },
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                           className: "row",
-                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                             className: "col-12",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                               className: "input-group my-3",
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
                                 type: "text",
                                 className: "form-control",
                                 placeholder: "Enter Password",
                                 "aria-label": "",
-                                "aria-describedby": "basic-addon2"
-                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                                "aria-describedby": "basic-addon2",
+                                disabled: loading,
+                                onChange: function onChange(e) {
+                                  return setPassword(e.target.value);
+                                }
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                                 className: "input-group-append",
-                                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                                   className: "input-group-text",
                                   id: "basic-addon2",
-                                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                                     className: "fa fa-unlock"
                                   })
                                 })
                               })]
                             })
-                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                             className: "col-12 mt-3",
-                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+                            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+                              disabled: loading,
                               type: "submit",
                               className: "btn btn-primary text-uppercase",
-                              children: "Unlock"
+                              children: loading ? 'Loading..' : 'Unlock'
                             })
                           })]
                         })
                       })]
                     })
                   })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                   className: "col-sm-6 col-xxl-9 col-lg-7 bg-gradient o-hidden order-1 order-sm-2",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                     className: "row align-items-center h-100",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                       className: "col-7 mx-auto ",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
                         className: "img-fluid",
                         src: "../assets/img/bg/login.svg"
                       })
@@ -6232,7 +6384,7 @@ var routes = [{
   title: 'Locked',
   path: '/auth/locked',
   component: _components_auths_Locked__WEBPACK_IMPORTED_MODULE_4__.default,
-  "protected": true
+  "protected": false
 }, {
   title: 'Page Not Found',
   path: '*',
@@ -6258,8 +6410,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "userLogout": () => (/* binding */ userLogout),
 /* harmony export */   "getAccessToken": () => (/* binding */ getAccessToken),
 /* harmony export */   "getProfile": () => (/* binding */ getProfile),
-/* harmony export */   "lockedUser": () => (/* binding */ lockedUser),
-/* harmony export */   "unlockedUser": () => (/* binding */ unlockedUser)
+/* harmony export */   "lockUser": () => (/* binding */ lockUser),
+/* harmony export */   "unlockUser": () => (/* binding */ unlockUser)
 /* harmony export */ });
 /* harmony import */ var _http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./http */ "./resources/js/services/http.js");
 
@@ -6311,10 +6463,10 @@ function getAccessToken() {
 function getProfile() {
   return (0,_http__WEBPACK_IMPORTED_MODULE_0__.http)().get('/auth/profile');
 }
-function lockedUser() {
+function lockUser() {
   return (0,_http__WEBPACK_IMPORTED_MODULE_0__.http)().get('/auth/lock');
 }
-function unlockedUser(data) {
+function unlockUser(data) {
   return (0,_http__WEBPACK_IMPORTED_MODULE_0__.http)().post('/auth/unlock', data);
 }
 
@@ -6381,7 +6533,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function getSetting() {
   return (0,_http__WEBPACK_IMPORTED_MODULE_0__.http)().get('/setting').then(function (response) {
-    console.log(response);
     return response.data;
   });
 }
@@ -6477,7 +6628,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var userInitState = {
   user: {},
-  isLoggedIn: false
+  isLoggedIn: false,
+  isLocked: false
 };
 var userReducer = function userReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : userInitState;
@@ -6490,13 +6642,15 @@ var userReducer = function userReducer() {
     case _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_LOGIN:
       return _objectSpread(_objectSpread({}, state), {}, {
         user: payload,
-        isLoggedIn: true
+        isLoggedIn: true,
+        isLocked: payload.locked
       });
 
     case _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_PROFILE:
       return _objectSpread(_objectSpread({}, state), {}, {
         user: payload,
-        isLoggedIn: true
+        isLoggedIn: true,
+        isLocked: payload.locked
       });
 
     case _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_LOGOUT:
@@ -6507,12 +6661,14 @@ var userReducer = function userReducer() {
 
     case _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_LOCK:
       return _objectSpread(_objectSpread({}, state), {}, {
-        user: payload
+        user: payload,
+        isLocked: payload.locked
       });
 
     case _constant__WEBPACK_IMPORTED_MODULE_0__.Constant.SET_USER_UNLOCK:
       return _objectSpread(_objectSpread({}, state), {}, {
-        user: payload
+        user: payload,
+        isLocked: payload.locked
       });
 
     default:

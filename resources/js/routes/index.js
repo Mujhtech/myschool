@@ -35,7 +35,7 @@ const routes = [
         title: 'Locked',
         path: '/auth/locked',
         component: Locked,
-        protected: true
+        protected: false
     },
     {
         title: 'Page Not Found',

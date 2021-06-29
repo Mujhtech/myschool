@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUserLogout } from "../actions/user";
-import { lockedUser as lockedMe, userLogout } from "../services/auth";
+import { setUserLogout, lockUser as lockUserAction } from "../actions/user";
+import { lockUser as lockMe, userLogout } from "../services/auth";
 import { useToasts } from 'react-toast-notifications';
 
 function Nav() {
@@ -32,9 +32,9 @@ function Nav() {
     const lockedUser = async () => {
 
         try {
-            const response = await lockedMe();
+            const response = await lockMe();
             console.log(response);
-            //dispatch(setUserLogout());
+            dispatch(lockUserAction(response.data));
             addToast("You are locked out", { appearance: 'success' });
         } catch(err) {
             if(!err.response) return;

@@ -85,7 +85,7 @@ class AuthController extends Controller
                 $user = $request->user();
                 $user->locked = 0;
                 $user->save();
-                return response()->json(UserResource::make($user()), 200);
+                return response()->json(UserResource::make($request->user()), 200);
             } else {
                 return response()->json([
                     'message' => 'Incorrect password',
@@ -127,12 +127,13 @@ class AuthController extends Controller
     }
 
     public function lockMe(Request $request){
+
         if ($request->user()){
 
             $user = $request->user();
             $user->locked = 1;
             $user->save();
-            return response()->json(UserResource::make($user()), 200);
+            return response()->json(UserResource::make($request->user()), 200);
 
         } else {
             return response()->json([
@@ -140,5 +141,6 @@ class AuthController extends Controller
                 'status' => 500
             ], 500);
         }
+
     }
 }

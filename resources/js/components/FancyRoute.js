@@ -26,23 +26,17 @@ const FancyRoute = (props) => {
 
     const fetchSetting = async () => {
         try {
-
             const response = await getSetting();
-            console.log(response);
-            dispatch(setSetting(response.setting));
-            
+            dispatch(setSetting(response.setting)); 
         } catch (err) {
             if(!err.response) return;
-            console.log(err.response)
         }
     };
 
     const fetchUserProfile = async () => {
         try {
             const response = await getProfile();
-            console.log(response.data);
             dispatch(setProfile(response.data));
-
         } catch (err) {
             if(!err.response) return;
             localStorage.removeItem('laravelReactSpa');
@@ -56,19 +50,18 @@ const FancyRoute = (props) => {
 
     useEffect(() => {
 
-        fetchSetting();
-        fetchUserProfile();
-
         document.title = props.title;
         NProgress.done();
         return () => {
+            fetchUserProfile();
+            fetchSetting();
             NProgress.start();
         };
 
     }, []);
 
     return props.protected === true ? (
-            <PrivateRoute path={props.path} exact={true}><NewComponent /></PrivateRoute>
+            <PrivateRoute path={props.path} exact={props.exact}><NewComponent /></PrivateRoute>
     ) : ( <Route path={props.path} exact>{ user.isLoggedIn && props.path == "/auth/login" ? <Redirect to="/" /> : <NewComponent /> }</Route> );
 };
 

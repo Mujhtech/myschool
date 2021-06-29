@@ -14,6 +14,20 @@ export const setProfile = (user) => {
     }
 }
 
+export const lockUser = (user) => {
+    return {
+        type: Constant.SET_USER_LOCK,
+        payload: user
+    }
+}
+
+export const unlockUser = (user) => {
+    return {
+        type: Constant.SET_USER_UNLOCK,
+        payload: user
+    }
+}
+
 export const setUserLogout = () => {
     return {
         type: Constant.SET_USER_LOGOUT,
