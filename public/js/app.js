@@ -4259,17 +4259,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! nprogress */ "./node_modules/nprogress/nprogress.js");
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var nprogress_nprogress_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nprogress/nprogress.css */ "./node_modules/nprogress/nprogress.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _css_FancyRoute_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../css/FancyRoute.css */ "./resources/css/FancyRoute.css");
 /* harmony import */ var _PrivateRoute__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PrivateRoute */ "./resources/js/components/PrivateRoute.js");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_setting__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../actions/setting */ "./resources/js/actions/setting.js");
-/* harmony import */ var _services_setting__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../services/setting */ "./resources/js/services/setting.js");
-/* harmony import */ var _actions_user__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../actions/user */ "./resources/js/actions/user.js");
-/* harmony import */ var _services_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../services/auth */ "./resources/js/services/auth.js");
-/* harmony import */ var react_toast_notifications__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-toast-notifications */ "./node_modules/react-toast-notifications/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_setting__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../actions/setting */ "./resources/js/actions/setting.js");
+/* harmony import */ var _services_setting__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../services/setting */ "./resources/js/services/setting.js");
+/* harmony import */ var _actions_user__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../actions/user */ "./resources/js/actions/user.js");
+/* harmony import */ var _services_auth__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../services/auth */ "./resources/js/services/auth.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -4289,17 +4287,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
-
 var FancyRoute = function FancyRoute(props) {
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useDispatch)();
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
   var NewComponent = props.component;
-  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(function (state) {
+  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(function (state) {
     return state.user;
   });
-
-  var _useToasts = (0,react_toast_notifications__WEBPACK_IMPORTED_MODULE_12__.useToasts)(),
-      addToast = _useToasts.addToast;
+  var setting = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(function (state) {
+    return state.setting;
+  });
 
   var fetchSetting = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -4310,11 +4306,11 @@ var FancyRoute = function FancyRoute(props) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return (0,_services_setting__WEBPACK_IMPORTED_MODULE_9__.getSetting)();
+              return (0,_services_setting__WEBPACK_IMPORTED_MODULE_8__.getSetting)();
 
             case 3:
               response = _context.sent;
-              dispatch((0,_actions_setting__WEBPACK_IMPORTED_MODULE_8__.setSetting)(response.setting));
+              dispatch((0,_actions_setting__WEBPACK_IMPORTED_MODULE_7__.setSetting)(response.setting));
               _context.next = 11;
               break;
 
@@ -4351,11 +4347,11 @@ var FancyRoute = function FancyRoute(props) {
             case 0:
               _context2.prev = 0;
               _context2.next = 3;
-              return (0,_services_auth__WEBPACK_IMPORTED_MODULE_11__.getProfile)();
+              return (0,_services_auth__WEBPACK_IMPORTED_MODULE_10__.getProfile)();
 
             case 3:
               response = _context2.sent;
-              dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_10__.setProfile)(response.data));
+              dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_9__.setProfile)(response.data));
               _context2.next = 13;
               break;
 
@@ -4372,8 +4368,7 @@ var FancyRoute = function FancyRoute(props) {
 
             case 11:
               localStorage.removeItem('laravelReactSpa');
-              dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_10__.setUserLogout)()); //addToast(err.response.data.message, { appearance: 'error' });
-              //console.log(err.response)
+              dispatch((0,_actions_user__WEBPACK_IMPORTED_MODULE_9__.setUserLogout)()); //console.log(err.response)
 
             case 13:
             case "end":
@@ -4393,21 +4388,21 @@ var FancyRoute = function FancyRoute(props) {
     document.title = props.title;
     nprogress__WEBPACK_IMPORTED_MODULE_2___default().done();
     return function () {
-      fetchUserProfile();
-      fetchSetting();
+      if (Object.keys(user.user).length === 0) fetchUserProfile();
+      if (Object.keys(setting.setting).length === 0) fetchSetting();
       nprogress__WEBPACK_IMPORTED_MODULE_2___default().start();
     };
   }, []);
-  return props["protected"] === true ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_5__.default, {
+  return props["protected"] === true ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_PrivateRoute__WEBPACK_IMPORTED_MODULE_5__.default, {
     path: props.path,
     exact: props.exact,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(NewComponent, {})
-  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(NewComponent, {})
+  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Route, {
     path: props.path,
     exact: true,
-    children: user.isLoggedIn && props.path == "/auth/login" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Redirect, {
+    children: user.isLoggedIn && props.path == "/auth/login" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Redirect, {
       to: "/"
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(NewComponent, {})
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(NewComponent, {})
   });
 };
 
@@ -4517,9 +4512,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 function Nav() {
   var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.user;
-  });
-  var setting = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
-    return state.setting;
   });
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
 

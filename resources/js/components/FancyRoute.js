@@ -4,13 +4,11 @@ import 'nprogress/nprogress.css';
 import { Route, Redirect } from 'react-router-dom';
 import '../../css/FancyRoute.css';
 import PrivateRoute from './PrivateRoute';
-import Home from './Home';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSetting } from "../actions/setting";
 import { getSetting } from "../services/setting";
 import { setProfile, setUserLogout } from "../actions/user";
 import { getProfile } from "../services/auth";
-import { useToasts } from 'react-toast-notifications';
 
 
 
@@ -22,7 +20,7 @@ const FancyRoute = (props) => {
 
     const user = useSelector((state) => state.user);
 
-    const { addToast } = useToasts();
+    const setting = useSelector((state) => state.setting);
 
     const fetchSetting = async () => {
         try {
@@ -41,7 +39,6 @@ const FancyRoute = (props) => {
             if(!err.response) return;
             localStorage.removeItem('laravelReactSpa');
             dispatch(setUserLogout());
-            //addToast(err.response.data.message, { appearance: 'error' });
             //console.log(err.response)
         }
     };
@@ -53,8 +50,8 @@ const FancyRoute = (props) => {
         document.title = props.title;
         NProgress.done();
         return () => {
-            fetchUserProfile();
-            fetchSetting();
+            if(Object.keys(user.user).length === 0) fetchUserProfile();
+            if(Object.keys(setting.setting).length === 0) fetchSetting();
             NProgress.start();
         };
 

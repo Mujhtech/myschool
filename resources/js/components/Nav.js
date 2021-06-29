@@ -8,7 +8,6 @@ import { useToasts } from 'react-toast-notifications';
 function Nav() {
 
     const user = useSelector((state) => state.user);
-    const setting = useSelector((state) => state.setting);
 
     const dispatch = useDispatch();
 
