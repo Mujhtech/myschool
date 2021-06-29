@@ -53,6 +53,7 @@ const FancyRoute = (props) => {
         return () => {
             if(Object.keys(user.user).length === 0) fetchUserProfile();
             if(Object.keys(setting.setting).length === 0) fetchSetting();
+            NProgress.configure({ easing: 'ease', speed: 800 });
             NProgress.start();
         };
 

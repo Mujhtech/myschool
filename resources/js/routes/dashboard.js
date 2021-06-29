@@ -1,5 +1,6 @@
 import SettingIndex from "../components/setting/Index";
 import DashboardIndex from "../components/dashboard/Index";
+import ProfileIndex from "../components/profile/Index";
 
 const dashboard = [
     {
@@ -20,7 +21,7 @@ const dashboard = [
         title: "Profile",
         path: "/profile",
         exact: true,
-        component: () => <h1>Profile</h1>,
+        component: ProfileIndex,
         protected: true,
     },
     {
