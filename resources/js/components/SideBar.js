@@ -20,16 +20,16 @@ function SideBar() {
                     </li>
                     <li className="nav-static-title">Users</li>
                     <li className="">
-                        <a href="" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage User Role</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="">
-                        <a href="{{ route('admin.manage-role') }}" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage Teachers</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="">
                         <a className="has-arrow" href={void(0)} aria-expanded="false">
@@ -37,33 +37,33 @@ function SideBar() {
                             <span className="nav-title">Manage Students</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li className="active"><a href="">Default</a></li>
+                            <li className="active"><Link to="/setting">Default</Link></li>
                         </ul>
                     </li>
                     <li className="nav-static-title">Academic</li>
                     <li>
-                        <a href="" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage E-Exam</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="">
-                        <a href="" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage Grade</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="">
-                        <a href="" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage Academic Session</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="">
-                        <a href="" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage Class</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="">
                         <a className="has-arrow" href={void(0)} aria-expanded="false">
@@ -71,20 +71,20 @@ function SideBar() {
                             <span className="nav-title">Manage E-Result</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li className="active"><a href='index.html'>Default</a></li>
+                            <li className="active"><Link to='/'>Default</Link></li>
                         </ul>
                     </li>
                     <li className="">
-                        <a href="" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Settings</span>
-                        </a>
+                        </Link>
                     </li>
                     <li className="">
-                        <a href="" aria-expanded="false">
+                        <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Profile</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

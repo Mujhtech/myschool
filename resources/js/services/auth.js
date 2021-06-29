@@ -27,7 +27,7 @@ export function isLoggedIn() {
     return token != null;
 }
 
-export function logout() {
+export function userLogout() {
     http().get('/auth/logout');
     localStorage.removeItem('laravelReactSpa');
 }
@@ -46,4 +46,12 @@ export function getAccessToken() {
 
 export function getProfile() {
     return http().get('/auth/profile');
+}
+
+export function lockedUser() {
+    return http().get('/auth/lock');
+}
+
+export function unlockedUser(data) {
+    return http().post('/auth/unlock', data);
 }

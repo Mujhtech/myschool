@@ -8,6 +8,10 @@ import Home from './Home';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSetting } from "../actions/setting";
 import { getSetting } from "../services/setting";
+import { setProfile, setUserLogout } from "../actions/user";
+import { getProfile } from "../services/auth";
+import { useToasts } from 'react-toast-notifications';
+
 
 
 const FancyRoute = (props) => {
@@ -15,6 +19,10 @@ const FancyRoute = (props) => {
     const dispatch = useDispatch();
 
     const NewComponent = props.component;
+
+    const user = useSelector((state) => state.user);
+
+    const { addToast } = useToasts();
 
     const fetchSetting = async () => {
         try {
@@ -24,7 +32,23 @@ const FancyRoute = (props) => {
             dispatch(setSetting(response.setting));
             
         } catch (err) {
+            if(!err.response) return;
             console.log(err.response)
+        }
+    };
+
+    const fetchUserProfile = async () => {
+        try {
+            const response = await getProfile();
+            console.log(response.data);
+            dispatch(setProfile(response.data));
+
+        } catch (err) {
+            if(!err.response) return;
+            localStorage.removeItem('laravelReactSpa');
+            dispatch(setUserLogout());
+            //addToast(err.response.data.message, { appearance: 'error' });
+            //console.log(err.response)
         }
     };
 
@@ -33,6 +57,7 @@ const FancyRoute = (props) => {
     useEffect(() => {
 
         fetchSetting();
+        fetchUserProfile();
 
         document.title = props.title;
         NProgress.done();
@@ -44,7 +69,7 @@ const FancyRoute = (props) => {
 
     return props.protected === true ? (
             <PrivateRoute path={props.path} exact={true}><NewComponent /></PrivateRoute>
-    ) : ( <Route {...props} /> );
+    ) : ( <Route path={props.path} exact>{ user.isLoggedIn && props.path == "/auth/login" ? <Redirect to="/" /> : <NewComponent /> }</Route> );
 };
 
 export default FancyRoute;

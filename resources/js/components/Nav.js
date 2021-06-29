@@ -1,10 +1,48 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { setUserLogout } from "../actions/user";
+import { lockedUser as lockedMe, userLogout } from "../services/auth";
+import { useToasts } from 'react-toast-notifications';
 
 function Nav() {
 
     const user = useSelector((state) => state.user);
+    const setting = useSelector((state) => state.setting);
+
+    const dispatch = useDispatch();
+
+    const { addToast } = useToasts();
+
+    const logoutUser = async () => {
+        try {
+            const response = await userLogout();
+            console.log(response);
+            localStorage.removeItem('laravelReactSpa');
+            dispatch(setUserLogout());
+            addToast("Logout successful", { appearance: 'error' });
+        } catch(err) {
+            if(!err.response) return;
+            console.log(err.response.data.message);
+            addToast(err.response.data.message, { appearance: 'error' });
+        }  
+
+    }
+
+    const lockedUser = async () => {
+
+        try {
+            const response = await lockedMe();
+            console.log(response);
+            //dispatch(setUserLogout());
+            addToast("You are locked out", { appearance: 'success' });
+        } catch(err) {
+            if(!err.response) return;
+            console.log(err.response.data.message);
+            addToast(err.response.data.message, { appearance: 'error' });
+        }
+        
+    }
 
 
     useEffect(() => {
@@ -18,10 +56,10 @@ function Nav() {
             <nav className="navbar navbar-expand-md">
                 <div className="navbar-header d-flex align-items-center">
                     <a href={void(0)} className="mobile-toggle"><i className="ti ti-align-right"></i></a>
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand" to="/">
                         <img src="{{ school_logo() }}" className="img-fluid logo-desktop" alt="logo"/>
                         <img src="{{ school_logo() }}" className="img-fluid logo-mobile" alt="logo"/>
-                    </a>
+                    </Link>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -142,20 +180,20 @@ function Nav() {
                                                 <h4 className="text-white mb-0">{user.user.fullname}</h4>
                                                 <small className="text-white">{user.user.email}</small>
                                             </div>
-                                            <Link to="/auth/logout" className="text-white font-20 tooltip-wrapper" data-toggle="tooltip"
+                                            <a href={void(0)} onClick={() => logoutUser()} className="text-white font-20 tooltip-wrapper" data-toggle="tooltip"
                                                data-placement="top" title="" data-original-title="Logout"> <i
-                                                className="zmdi zmdi-power"></i></Link>
+                                                className="zmdi zmdi-power"></i></a>
                                         </div>
                                     </div>
                                     <div className="p-4">
                                         <Link className="dropdown-item d-flex nav-link" to="/profile">
                                             <i className="fa fa-user pr-2 text-success"></i> Profile</Link>
                                         <Link className="dropdown-item d-flex nav-link" to="/setting">
-                                            <i className=" ti ti-settings pr-2 text-info"></i> Settings
+                                            <i className="ti ti-settings pr-2 text-info"></i> Settings
                                         </Link>
-                                        <Link className="dropdown-item d-flex nav-link" href="{{ route('locked') }}">
-                                            <i className=" ti ti-settings pr-2 text-info"></i> Locked
-                                        </Link>
+                                        <a href={void(0)} onClick={() => lockedUser()} className="dropdown-item d-flex nav-link">
+                                            <i className="ti ti-key pr-2 text-danger"></i> Locked
+                                        </a>
                                     </div>
                                 </div>
                             </li>

@@ -75,7 +75,7 @@ class AuthController extends Controller
         }
     }
 
-    public function locked(Request $request){
+    public function unLockMe(Request $request){
         $request->validate([
             'password' => 'required|string'
         ]);
@@ -85,7 +85,7 @@ class AuthController extends Controller
                 $user = $request->user();
                 $user->locked = 0;
                 $user->save();
-                return response()->json($request->user(), 200);
+                return response()->json(UserResource::make($user()), 200);
             } else {
                 return response()->json([
                     'message' => 'Incorrect password',
@@ -118,6 +118,22 @@ class AuthController extends Controller
                     'status' => 500
                 ], 500);
             }
+        } else {
+            return response()->json([
+                'message' => 'Not logged in',
+                'status' => 500
+            ], 500);
+        }
+    }
+
+    public function lockMe(Request $request){
+        if ($request->user()){
+
+            $user = $request->user();
+            $user->locked = 1;
+            $user->save();
+            return response()->json(UserResource::make($user()), 200);
+
         } else {
             return response()->json([
                 'message' => 'Not logged in',

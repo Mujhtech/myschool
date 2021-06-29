@@ -24,9 +24,10 @@ Route::get('/', function(){
 Route::group(['prefix' => 'auth'], function(){
     Route::post('otp', 'API\AuthController@otp');
     Route::post('login', 'API\AuthController@login');
-    Route::post('locked', 'API\AuthController@locked');
     Route::group(['middleware' => ['auth:api', 'locked']], function() {
         Route::get('logout', 'API\AuthController@logout');
+        Route::get('lock', 'API\AuthController@lockMe');    
+        Route::post('unlock', 'API\AuthController@unLockMe');
         Route::get('profile', 'API\AuthController@profile');
     });
 });

@@ -20,8 +20,6 @@ function Login(props) {
         }
     }
 
-
-
     const loggedIn = async (e) => {
         e.preventDefault();
         try {
@@ -51,6 +49,10 @@ function Login(props) {
     };
 
     useEffect(() => {
+
+        return () => {
+
+        };
 
     }, []);
 
