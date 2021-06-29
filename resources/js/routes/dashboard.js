@@ -20,7 +20,7 @@ const dashboard = [
         title: "Profile",
         path: "/profile",
         exact: true,
-        component: SettingIndex,
+        component: () => <h1>Profile</h1>,
         protected: true,
     },
     {

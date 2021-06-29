@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { unlockUser } from "../../services/auth";
 import { unlockUser as unlockUserAction } from "../../actions/user";
 import { useToasts } from 'react-toast-notifications';
+import Loading from '../Loading';
 
 function Locked(props) {
 
@@ -12,6 +13,7 @@ function Locked(props) {
     const [loading, setLoading] = useState(false);
     const dispatch = useDispatch();
     const { addToast } = useToasts();
+    const history = useHistory();
 
     const errorsMessage = (errors) => {
         for (const key in errors) {
@@ -27,8 +29,10 @@ function Locked(props) {
             console.log(response);
             dispatch(unlockUserAction(response.data));
             setLoading(false);
-            addToast("Welcome back", { appearance: 'success' });
-            props.history.push('/');
+            addToast("Welcome back", { appearance: 'success', autoDismiss: true });
+            history.push({
+                pathname:  "/"
+            });
         } catch (err) {
             setLoading(false);
             if(!err.response) return;
@@ -37,10 +41,10 @@ function Locked(props) {
                 errorsMessage(err.response.data.errors);
                 break
               case 401:
-                addToast(err.response.data.message, { appearance: 'error' });
+                addToast(err.response.data.message, { appearance: 'error', autoDismiss: true });
                 break
               case 500:
-                addToast(err.response.data.message, { appearance: 'error' });
+                addToast(err.response.data.message, { appearance: 'error', autoDismiss: true });
                 break
               default:
                 break
@@ -68,7 +72,7 @@ function Locked(props) {
                                                     <div className="row">
                                                         <div className="col-12">
                                                             <div className="input-group my-3">
-                                                                <input type="text" className="form-control"
+                                                                <input type="password" className="form-control"
                                                                        placeholder="Enter Password" aria-label=""
                                                                        aria-describedby="basic-addon2"
                                                                        disabled={loading}
@@ -84,7 +88,7 @@ function Locked(props) {
 
                                                         <div className="col-12 mt-3">
                                                             <button disabled={loading} type="submit"
-                                                                    className="btn btn-primary text-uppercase">{ loading ? 'Loading..' : 'Unlock' }
+                                                                    className="btn btn-primary text-uppercase">{ loading ? <Loading /> : 'Unlock' }
                                                             </button>
                                                         </div>
                                                     </div>

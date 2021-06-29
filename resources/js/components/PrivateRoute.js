@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Locked from "./auths/Locked";
 
 const PrivateRoute = ({ children, ...rest }) => {
     const user = useSelector((state) => state.user);
@@ -13,12 +14,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                     return children;
                 else if (user.isLoggedIn === true && user.isLocked === true)
                     return (
-                        <Redirect
-                            to={{
-                                pathname: "/auth/locked",
-                                state: { from: location },
-                            }}
-                        />
+                        <Locked />
                     );
                 else
                     return (

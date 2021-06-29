@@ -9,6 +9,7 @@ import { setSetting } from "../actions/setting";
 import { getSetting } from "../services/setting";
 import { setProfile, setUserLogout } from "../actions/user";
 import { getProfile } from "../services/auth";
+import SingleRoute from './SingleRoute';
 
 
 
@@ -59,7 +60,7 @@ const FancyRoute = (props) => {
 
     return props.protected === true ? (
             <PrivateRoute path={props.path} exact={props.exact}><NewComponent /></PrivateRoute>
-    ) : ( <Route path={props.path} exact>{ user.isLoggedIn && props.path == "/auth/login" ? <Redirect to="/" /> : <NewComponent /> }</Route> );
+    ) : ( <SingleRoute path={props.path} exact={props.exact}><NewComponent /></SingleRoute> );
 };
 
 export default FancyRoute;
