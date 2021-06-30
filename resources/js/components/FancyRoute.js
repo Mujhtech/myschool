@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import { Route, Redirect } from 'react-router-dom';
 import '../../css/FancyRoute.css';
 import PrivateRoute from './PrivateRoute';
 import { useSelector, useDispatch } from 'react-redux';

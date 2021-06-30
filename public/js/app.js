@@ -4287,7 +4287,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
 var FancyRoute = function FancyRoute(props) {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
   var NewComponent = props.component;
