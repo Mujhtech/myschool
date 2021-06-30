@@ -75,6 +75,13 @@ const dashboard = [
         protected: true,
     },
     {
+        title: "Staffs",
+        path: "/staffs",
+        exact: true,
+        component: () => <h1>Staffs</h1>,
+        protected: true,
+    },
+    {
         title: "Page Not Found",
         path: "*",
         component: () => <h1>You are lost</h1>,
