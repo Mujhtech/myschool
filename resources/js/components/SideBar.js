@@ -42,27 +42,33 @@ function SideBar() {
                     </li>
                     <li className="nav-static-title">Academic</li>
                     <li>
-                        <Link to="/setting" aria-expanded="false">
+                        <Link to="/academic-syllabus" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
-                            <span className="nav-title">Manage E-Exam</span>
+                            <span className="nav-title">Syllabus</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/e-exam" aria-expanded="false">
+                            <i className="nav-icon ti ti-rocket"></i>
+                            <span className="nav-title">E-Exam</span>
                         </Link>
                     </li>
                     <li className="">
-                        <Link to="/setting" aria-expanded="false">
+                        <Link to="/grade" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
-                            <span className="nav-title">Manage Grade</span>
+                            <span className="nav-title">Grade</span>
                         </Link>
                     </li>
                     <li className="">
-                        <Link to="/setting" aria-expanded="false">
+                        <Link to="/academic-session" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
-                            <span className="nav-title">Manage Academic Session</span>
+                            <span className="nav-title">Academic Session</span>
                         </Link>
                     </li>
                     <li className="">
-                        <Link to="/setting" aria-expanded="false">
+                        <Link to="/classes" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
-                            <span className="nav-title">Manage Class</span>
+                            <span className="nav-title">Class</span>
                         </Link>
                     </li>
                     <li className="">

@@ -1,6 +1,7 @@
 import SettingIndex from "../components/setting/Index";
 import DashboardIndex from "../components/dashboard/Index";
 import ProfileIndex from "../components/profile/Index";
+import AcademicSyllabusIndex from "../components/academic_syllabus/Index";
 
 const dashboard = [
     {
@@ -22,6 +23,13 @@ const dashboard = [
         path: "/profile",
         exact: true,
         component: ProfileIndex,
+        protected: true,
+    },
+    {
+        title: "Academic Syllabus",
+        path: "/academic-syllabus",
+        exact: true,
+        component: AcademicSyllabusIndex,
         protected: true,
     },
     {
