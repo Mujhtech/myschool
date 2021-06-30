@@ -13,16 +13,16 @@ function SideBar() {
                         </Link>
                     </li>
                     <li className="">
-                        <Link to="/setting" aria-expanded="false">
+                        <Link to="/messaging" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Messaging</span>
                         </Link>
                     </li>
                     <li className="nav-static-title">Users</li>
                     <li className="">
-                        <Link to="/setting" aria-expanded="false">
+                        <Link to="/roles" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
-                            <span className="nav-title">Manage User Role</span>
+                            <span className="nav-title">User Role</span>
                         </Link>
                     </li>
                     <li className="">
@@ -37,7 +37,8 @@ function SideBar() {
                             <span className="nav-title">Manage Students</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li className="active"><Link to="/setting">Default</Link></li>
+                            <li className="active"><Link to="/student-new">New Student</Link></li>
+                            <li className="active"><Link to="/students">Students</Link></li>
                         </ul>
                     </li>
                     <li className="nav-static-title">Academic</li>
@@ -87,7 +88,7 @@ function SideBar() {
                         </Link>
                     </li>
                     <li className="">
-                        <Link to="/setting" aria-expanded="false">
+                        <Link to="/profile" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Profile</span>
                         </Link>

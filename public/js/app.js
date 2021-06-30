@@ -5052,7 +5052,7 @@ function SideBar() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
           className: "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-            to: "/setting",
+            to: "/messaging",
             "aria-expanded": "false",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
               className: "nav-icon ti ti-rocket"
@@ -5067,13 +5067,13 @@ function SideBar() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
           className: "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-            to: "/setting",
+            to: "/roles",
             "aria-expanded": "false",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
               className: "nav-icon ti ti-rocket"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
               className: "nav-title",
-              children: "Manage User Role"
+              children: "User Role"
             })]
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
@@ -5100,15 +5100,21 @@ function SideBar() {
               className: "nav-title",
               children: "Manage Students"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
             "aria-expanded": "false",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
               className: "active",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                to: "/setting",
-                children: "Default"
+                to: "/student-new",
+                children: "New Student"
               })
-            })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              className: "active",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                to: "/students",
+                children: "Students"
+              })
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
           className: "nav-static-title",
@@ -5208,7 +5214,7 @@ function SideBar() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
           className: "",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-            to: "/setting",
+            to: "/profile",
             "aria-expanded": "false",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
               className: "nav-icon ti ti-rocket"
@@ -6837,6 +6843,56 @@ var dashboard = [{
   path: "/academic-syllabus",
   exact: true,
   component: _components_academic_syllabus_Index__WEBPACK_IMPORTED_MODULE_3__.default,
+  "protected": true
+}, {
+  title: "Grade",
+  path: "/grade",
+  exact: true,
+  component: function component() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+      children: "Grade"
+    });
+  },
+  "protected": true
+}, {
+  title: "Academic Session",
+  path: "/academic-session",
+  exact: true,
+  component: function component() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+      children: "Academic Session"
+    });
+  },
+  "protected": true
+}, {
+  title: "Classes",
+  path: "/classes",
+  exact: true,
+  component: function component() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+      children: "Classes"
+    });
+  },
+  "protected": true
+}, {
+  title: "E-Exam",
+  path: "/e-exam",
+  exact: true,
+  component: function component() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+      children: "E-Exam"
+    });
+  },
+  "protected": true
+}, {
+  title: "User Roles",
+  path: "/roles",
+  exact: true,
+  component: function component() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+      children: "User Role"
+    });
+  },
   "protected": true
 }, {
   title: "Page Not Found",
