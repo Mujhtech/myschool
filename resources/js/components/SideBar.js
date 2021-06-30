@@ -36,9 +36,9 @@ function SideBar() {
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage Students</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li className="active"><Link to="/student-new">New Student</Link></li>
-                            <li className="active"><Link to="/students">Students</Link></li>
+                        <ul aria-expanded="false" className="collapse">
+                            <li className=""><Link to="/student-new">New Student</Link></li>
+                            <li className=""><Link to="/students">Students</Link></li>
                         </ul>
                     </li>
                     <li className="nav-static-title">Academic</li>
@@ -81,6 +81,7 @@ function SideBar() {
                             <li className="active"><Link to='/'>Default</Link></li>
                         </ul>
                     </li>
+                    <li className="nav-static-title">Others</li>
                     <li className="">
                         <Link to="/setting" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
