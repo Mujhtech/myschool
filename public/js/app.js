@@ -6899,14 +6899,24 @@ var dashboard = [{
   },
   "protected": true
 }, {
+  title: "Messaging",
+  path: "/messaging",
+  exact: true,
+  component: function component() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+      children: "Messaging"
+    });
+  },
+  "protected": true
+}, {
   title: "Page Not Found",
   path: "*",
   component: function component() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       children: "You are lost"
     });
   },
-  "protected": false
+  "protected": true
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dashboard);
 

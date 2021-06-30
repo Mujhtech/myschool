@@ -68,10 +68,17 @@ const dashboard = [
         protected: true,
     },
     {
+        title: "Messaging",
+        path: "/messaging",
+        exact: true,
+        component: () => <h1>Messaging</h1>,
+        protected: true,
+    },
+    {
         title: "Page Not Found",
         path: "*",
-        component: () => <div>You are lost</div>,
-        protected: false,
+        component: () => <h1>You are lost</h1>,
+        protected: true,
     },
 ];
 
