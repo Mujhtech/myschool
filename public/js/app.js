@@ -5316,7 +5316,7 @@ function AcademicSyllabusIndex() {
             className: "card-heading",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
               className: "card-title",
-              children: "Downloads Files"
+              children: "Academic Syllabus Files"
             })
           })
         })

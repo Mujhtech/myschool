@@ -7,7 +7,7 @@ export default function AcademicSyllabusIndex() {
                 <div className="card-header d-flex justify-content-between">
                     <div className="card-heading">
                         <div className="card-heading">
-                            <h4 className="card-title">Downloads Files</h4>
+                            <h4 className="card-title">Academic Syllabus Files</h4>
                         </div>
                     </div>
                 </div>
