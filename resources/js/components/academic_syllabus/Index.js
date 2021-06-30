@@ -18,7 +18,7 @@ export default function AcademicSyllabusIndex() {
                     <div
                         id="mCSB_5"
                         className="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside"
-                        tabindex="0"
+                        tabIndex="0"
                         style={{maxHeight: 'none'}}
                     >
                         <div

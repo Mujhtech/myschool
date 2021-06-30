@@ -4,8 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 function SideBar() {
     const { pathname } = useLocation();
 
-    console.log(pathname);
-
     return (
         <aside className="app-navbar">
             <div className="sidebar-nav scrollbar scroll_light">
@@ -23,7 +21,7 @@ function SideBar() {
                         </Link>
                     </li>
                     <li className="nav-static-title">Users</li>
-                    <li className={pathname == '/' ? 'roles' : ''}>
+                    <li className={pathname == '/roles' ? 'active' : ''}>
                         <Link to="/roles" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">User Role</span>
@@ -82,7 +80,7 @@ function SideBar() {
                             <span className="nav-title">Manage E-Result</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li className="active"><Link to='/e-result'>E-Result</Link></li>
+                            <li className={pathname == '/e-result' ? 'active' : ''}><Link to='/e-result'>E-Result</Link></li>
                         </ul>
                     </li>
                     <li className="nav-static-title">Others</li>

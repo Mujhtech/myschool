@@ -5035,7 +5035,6 @@ function SideBar() {
   var _useLocation = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useLocation)(),
       pathname = _useLocation.pathname;
 
-  console.log(pathname);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("aside", {
     className: "app-navbar",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -5071,7 +5070,7 @@ function SideBar() {
           className: "nav-static-title",
           children: "Users"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-          className: pathname == '/' ? 'roles' : '',
+          className: pathname == '/roles' ? 'active' : '',
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
             to: "/roles",
             "aria-expanded": "false",
@@ -5201,7 +5200,7 @@ function SideBar() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
             "aria-expanded": "false",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-              className: "active",
+              className: pathname == '/e-result' ? 'active' : '',
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
                 to: "/e-result",
                 children: "E-Result"
@@ -5347,7 +5346,7 @@ function AcademicSyllabusIndex() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           id: "mCSB_5",
           className: "mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside",
-          tabindex: "0",
+          tabIndex: "0",
           style: {
             maxHeight: 'none'
           },
