@@ -6,6 +6,12 @@ import ClassesIndex from "../components/classes/Index";
 import MessagingIndex from "../components/messaging/Index";
 import StaffsIndex from "../components/staffs/Index";
 import GradeIndex from "../components/grade/Index";
+import AcademicSessionIndex from "../components/academic_session/Index";
+import RoleIndex from "../components/role/Index";
+import EExamIndex from "../components/e_exam/Index";
+import StudentCreate from "../components/student/Create";
+import StudentIndex from "../components/student/Index";
+import EResultIndex from "../components/e_result/Index";
 
 const dashboard = [
     {
@@ -47,7 +53,7 @@ const dashboard = [
         title: "Academic Session",
         path: "/academic-session",
         exact: true,
-        component: () => <h1>Academic Session</h1>,
+        component: AcademicSessionIndex,
         protected: true,
     },
     {
@@ -61,14 +67,14 @@ const dashboard = [
         title: "E-Exam",
         path: "/e-exam",
         exact: true,
-        component: () => <h1>E-Exam</h1>,
+        component: EExamIndex,
         protected: true,
     },
     {
         title: "User Roles",
         path: "/roles",
         exact: true,
-        component: () => <h1>User Role</h1>,
+        component: RoleIndex,
         protected: true,
     },
     {
@@ -84,7 +90,28 @@ const dashboard = [
         exact: true,
         component: StaffsIndex,
         protected: true,
-    }
+    },
+    {
+        title: "E-Result",
+        path: "/e-result",
+        exact: true,
+        component: EResultIndex,
+        protected: true,
+    },
+    {
+        title: "Student",
+        path: "/students",
+        exact: true,
+        component: StudentIndex,
+        protected: true,
+    },
+    {
+        title: "New Student",
+        path: "/student-new",
+        exact: true,
+        component: StudentCreate,
+        protected: true,
+    },
 ];
 
 export default dashboard;

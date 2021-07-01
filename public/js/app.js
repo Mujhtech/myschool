@@ -5309,6 +5309,29 @@ var SingleRoute = function SingleRoute(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/academic_session/Index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/academic_session/Index.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AcademicSessionIndex)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function AcademicSessionIndex() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "Academic Session"
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/academic_syllabus/Index.js":
 /*!************************************************************!*\
   !*** ./resources/js/components/academic_syllabus/Index.js ***!
@@ -6269,6 +6292,52 @@ function DashboardIndex() {
 
 /***/ }),
 
+/***/ "./resources/js/components/e_exam/Index.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/e_exam/Index.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EExamIndex)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function EExamIndex() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "E-Exam"
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/e_result/Index.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/e_result/Index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EResultIndex)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function EResultIndex() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "E-Result"
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/errors/NoMatch.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/errors/NoMatch.js ***!
@@ -6834,6 +6903,29 @@ function ProfileIndex() {
 
 /***/ }),
 
+/***/ "./resources/js/components/role/Index.js":
+/*!***********************************************!*\
+  !*** ./resources/js/components/role/Index.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RoleIndex)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function RoleIndex() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "User Roles"
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/setting/Index.js":
 /*!**************************************************!*\
   !*** ./resources/js/components/setting/Index.js ***!
@@ -6883,6 +6975,52 @@ function StaffsIndex() {
 
 /***/ }),
 
+/***/ "./resources/js/components/student/Create.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/student/Create.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ StudentCreate)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function StudentCreate() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "Student New"
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/student/Index.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/student/Index.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ StudentIndex)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function StudentIndex() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+    children: "Students"
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/constant.js":
 /*!**********************************!*\
   !*** ./resources/js/constant.js ***!
@@ -6926,7 +7064,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_messaging_Index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/messaging/Index */ "./resources/js/components/messaging/Index.js");
 /* harmony import */ var _components_staffs_Index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/staffs/Index */ "./resources/js/components/staffs/Index.js");
 /* harmony import */ var _components_grade_Index__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/grade/Index */ "./resources/js/components/grade/Index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_academic_session_Index__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/academic_session/Index */ "./resources/js/components/academic_session/Index.js");
+/* harmony import */ var _components_role_Index__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/role/Index */ "./resources/js/components/role/Index.js");
+/* harmony import */ var _components_e_exam_Index__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/e_exam/Index */ "./resources/js/components/e_exam/Index.js");
+/* harmony import */ var _components_student_Create__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/student/Create */ "./resources/js/components/student/Create.js");
+/* harmony import */ var _components_student_Index__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/student/Index */ "./resources/js/components/student/Index.js");
+/* harmony import */ var _components_e_result_Index__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/e_result/Index */ "./resources/js/components/e_result/Index.js");
+
+
+
+
+
 
 
 
@@ -6970,11 +7118,7 @@ var dashboard = [{
   title: "Academic Session",
   path: "/academic-session",
   exact: true,
-  component: function component() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
-      children: "Academic Session"
-    });
-  },
+  component: _components_academic_session_Index__WEBPACK_IMPORTED_MODULE_8__.default,
   "protected": true
 }, {
   title: "Classes",
@@ -6986,21 +7130,13 @@ var dashboard = [{
   title: "E-Exam",
   path: "/e-exam",
   exact: true,
-  component: function component() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
-      children: "E-Exam"
-    });
-  },
+  component: _components_e_exam_Index__WEBPACK_IMPORTED_MODULE_10__.default,
   "protected": true
 }, {
   title: "User Roles",
   path: "/roles",
   exact: true,
-  component: function component() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
-      children: "User Role"
-    });
-  },
+  component: _components_role_Index__WEBPACK_IMPORTED_MODULE_9__.default,
   "protected": true
 }, {
   title: "Messaging",
@@ -7013,6 +7149,24 @@ var dashboard = [{
   path: "/staffs",
   exact: true,
   component: _components_staffs_Index__WEBPACK_IMPORTED_MODULE_6__.default,
+  "protected": true
+}, {
+  title: "E-Result",
+  path: "/e-result",
+  exact: true,
+  component: _components_e_result_Index__WEBPACK_IMPORTED_MODULE_13__.default,
+  "protected": true
+}, {
+  title: "Student",
+  path: "/students",
+  exact: true,
+  component: _components_student_Index__WEBPACK_IMPORTED_MODULE_12__.default,
+  "protected": true
+}, {
+  title: "New Student",
+  path: "/student-new",
+  exact: true,
+  component: _components_student_Create__WEBPACK_IMPORTED_MODULE_11__.default,
   "protected": true
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dashboard);
