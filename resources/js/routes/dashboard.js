@@ -2,6 +2,10 @@ import SettingIndex from "../components/setting/Index";
 import DashboardIndex from "../components/dashboard/Index";
 import ProfileIndex from "../components/profile/Index";
 import AcademicSyllabusIndex from "../components/academic_syllabus/Index";
+import ClassesIndex from "../components/classes/Index";
+import MessagingIndex from "../components/messaging/Index";
+import StaffsIndex from "../components/staffs/Index";
+import GradeIndex from "../components/grade/Index";
 
 const dashboard = [
     {
@@ -36,7 +40,7 @@ const dashboard = [
         title: "Grade",
         path: "/grade",
         exact: true,
-        component: () => <h1>Grade</h1>,
+        component: GradeIndex,
         protected: true,
     },
     {
@@ -50,7 +54,7 @@ const dashboard = [
         title: "Classes",
         path: "/classes",
         exact: true,
-        component: () => <h1>Classes</h1>,
+        component: ClassesIndex,
         protected: true,
     },
     {
@@ -71,22 +75,16 @@ const dashboard = [
         title: "Messaging",
         path: "/messaging",
         exact: true,
-        component: () => <h1>Messaging</h1>,
+        component: MessagingIndex,
         protected: true,
     },
     {
         title: "Staffs",
         path: "/staffs",
         exact: true,
-        component: () => <h1>Staffs</h1>,
+        component: StaffsIndex,
         protected: true,
-    },
-    {
-        title: "Page Not Found",
-        path: "*",
-        component: () => <h1>You are lost</h1>,
-        protected: true,
-    },
+    }
 ];
 
 export default dashboard;
