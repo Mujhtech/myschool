@@ -6753,21 +6753,21 @@ function MessagingIndex() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                   className: "app-chat-sidebar-user scrollbar scroll_dark mCustomScrollbar _mCS_3 mCS-autoHide",
                   style: {
-                    position: 'relative',
-                    overflow: 'visible'
+                    position: "relative",
+                    overflow: "visible"
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                     id: "mCSB_3",
                     className: "mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside",
                     tabIndex: "0",
                     style: {
-                      maxHeight: 600 + 'px'
+                      maxHeight: 600 + "px"
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                       id: "mCSB_3_container",
                       className: "mCSB_container",
                       style: {
-                        position: 'relative',
+                        position: "relative",
                         top: 0,
                         left: 0
                       },
@@ -6871,9 +6871,9 @@ function MessagingIndex() {
                                 className: "bg-img-status bg-success"
                               })]
                             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h5", {
+                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h5", {
                                 className: "mb-0",
-                                children: "Smithmin Leyon "
+                                children: ["Smithmin Leyon", " "]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
                                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
@@ -6924,7 +6924,7 @@ function MessagingIndex() {
                                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
                                     className: "zmdi zmdi-check mr-2"
                                   })
-                                }), " You will sail along until you..."]
+                                }), " ", "You will sail along until you..."]
                               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                                 className: "d-xl-none",
                                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
@@ -7156,7 +7156,7 @@ function MessagingIndex() {
                     id: "mCSB_3_scrollbar_vertical",
                     className: "mCSB_scrollTools mCSB_3_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical",
                     style: {
-                      display: 'block'
+                      display: "block"
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                       className: "mCSB_draggerContainer",
@@ -7164,17 +7164,17 @@ function MessagingIndex() {
                         id: "mCSB_3_dragger_vertical",
                         className: "mCSB_dragger",
                         style: {
-                          position: 'absolute',
-                          minHeight: 50 + 'px',
-                          display: 'block',
-                          height: 505 + 'px',
-                          maxHeight: 566 + 'px',
-                          top: 0 + 'px'
+                          position: "absolute",
+                          minHeight: 50 + "px",
+                          display: "block",
+                          height: 505 + "px",
+                          maxHeight: 566 + "px",
+                          top: 0 + "px"
                         },
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                           className: "mCSB_dragger_bar",
                           style: {
-                            lineHeight: 50 + 'px'
+                            lineHeight: 50 + "px"
                           }
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -7250,21 +7250,21 @@ function MessagingIndex() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                   className: "scrollbar scroll_dark app-chat-msg-chat p-4 mCustomScrollbar _mCS_4 mCS-autoHide",
                   style: {
-                    position: 'relative',
-                    overflow: 'visible'
+                    position: "relative",
+                    overflow: "visible"
                   },
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                     id: "mCSB_4",
                     className: "mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside",
                     tabIndex: "0",
                     style: {
-                      maxHeight: 558 + 'px'
+                      maxHeight: 558 + "px"
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                       id: "mCSB_4_container",
                       className: "mCSB_container",
                       style: {
-                        position: 'relative',
+                        position: "relative",
                         top: 0,
                         left: 0
                       },
@@ -7619,7 +7619,7 @@ function MessagingIndex() {
                     id: "mCSB_4_scrollbar_vertical",
                     className: "mCSB_scrollTools mCSB_4_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical",
                     style: {
-                      display: 'block'
+                      display: "block"
                     },
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
                       className: "mCSB_draggerContainer",
@@ -7627,17 +7627,17 @@ function MessagingIndex() {
                         id: "mCSB_4_dragger_vertical",
                         className: "mCSB_dragger",
                         style: {
-                          position: 'absolute',
-                          minHeight: 50 + 'px',
-                          display: 'block',
-                          height: 201 + 'px',
-                          maxHeight: 566 + 'px',
-                          top: 0 + 'px'
+                          position: "absolute",
+                          minHeight: 50 + "px",
+                          display: "block",
+                          height: 201 + "px",
+                          maxHeight: 566 + "px",
+                          top: 0 + "px"
                         },
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
                           className: "mCSB_dragger_bar",
                           style: {
-                            lineHeight: 50 + 'px'
+                            lineHeight: 50 + "px"
                           }
                         })
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -7925,12 +7925,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ RoleIndex)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
+
+
 function RoleIndex() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-    children: "User Roles"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    classNameName: "row",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "col-12 col-lg-12",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "card card-statistics",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "card-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "card-heading",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+              className: "card-title",
+              children: "Roles"
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "card-body",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "table-responsive",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+              className: "table table-bordered mb-0",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+                    scope: "col",
+                    children: "#"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+                    scope: "col",
+                    children: "Name"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+                    scope: "col",
+                    children: "Action"
+                  })]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+                    scope: "row",
+                    children: "1"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                    children: "Admin"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                      to: "/roles",
+                      "class": "btn btn-icon btn-round btn-success",
+                      title: "Delete",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                        "class": "fa fa-trash"
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                      to: "/roles",
+                      "class": "btn btn-icon btn-round btn-primary",
+                      title: "Delete",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                        "class": "fa fa-trash"
+                      })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+                      to: "/roles",
+                      "class": "btn btn-icon btn-round btn-danger",
+                      title: "Delete",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                        "class": "fa fa-trash"
+                      })
+                    })]
+                  })]
+                })
+              })]
+            })
+          })
+        })]
+      })
+    })
   });
 }
 

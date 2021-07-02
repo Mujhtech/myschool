@@ -17,9 +17,6 @@ function Home() {
                         <div className="app-main" id="main">
                             <div className="container-fluid">
 
-
-                                {/* @include('partials.breadcrumb') */ }
-
                                 {/* @yield('content') */}
 
                                 <Switch>
