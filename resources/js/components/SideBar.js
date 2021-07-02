@@ -34,11 +34,11 @@ function SideBar() {
                         </Link>
                     </li>
                     <li className={pathname == '/students' || pathname == '/student-new' ? 'active' : ''}>
-                        <a className="has-arrow" href={void(0)} aria-expanded="false">
+                        <a className="has-arrow" href="javascript:void(0)" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage Students</span>
                         </a>
-                        <ul aria-expanded="false" className="collapse">
+                        <ul aria-expanded="false">
                             <li className={pathname == '/student-new' ? 'active' : ''}><Link to="/student-new">New Student</Link></li>
                             <li className={pathname == '/' ? 'students' : ''}><Link to="/students">Students</Link></li>
                         </ul>
@@ -75,7 +75,7 @@ function SideBar() {
                         </Link>
                     </li>
                     <li className={pathname == '/e-result' ? 'active' : ''}>
-                        <a className="has-arrow" href={void(0)} aria-expanded="false">
+                        <a className="has-arrow" href="javascript:void(0)" aria-expanded="false">
                             <i className="nav-icon ti ti-rocket"></i>
                             <span className="nav-title">Manage E-Result</span>
                         </a>

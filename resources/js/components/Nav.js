@@ -60,17 +60,17 @@ function Nav() {
         <header className="app-header top-bar">
             <nav className="navbar navbar-expand-md">
                 <div className="navbar-header d-flex align-items-center">
-                    <a href={void 0} className="mobile-toggle">
+                    <a href="javascript:void(0)" className="mobile-toggle">
                         <i className="ti ti-align-right"></i>
                     </a>
                     <Link className="navbar-brand" to="/">
                         <img
-                            src="{{ school_logo() }}"
+                            src="https://ui-avatars.com/api/?name=Futminna&color=7F9CF5&background=EBF4FF"
                             className="img-fluid logo-desktop"
                             alt="logo"
                         />
                         <img
-                            src="{{ school_logo() }}"
+                            src="https://ui-avatars.com/api/?name=Futminna&color=7F9CF5&background=EBF4FF"
                             className="img-fluid logo-mobile"
                             alt="logo"
                         />
@@ -95,7 +95,7 @@ function Nav() {
                         <ul className="navbar-nav nav-left">
                             <li className="nav-item">
                                 <a
-                                    href={void 0}
+                                    href="javascript:void(0)"
                                     className="nav-link sidebar-toggle"
                                 >
                                     <i className="ti ti-align-right"></i>
@@ -105,7 +105,7 @@ function Nav() {
                                 className="nav-item full-screen d-none d-lg-block"
                                 id="btnFullscreen"
                             >
-                                <a href={void 0} className="nav-link expand">
+                                <a href="javascript:void(0)" className="nav-link expand">
                                     <i className="icon-size-fullscreen"></i>
                                 </a>
                             </li>
@@ -114,7 +114,7 @@ function Nav() {
                             <li className="nav-item dropdown">
                                 <a
                                     className="nav-link dropdown-toggle"
-                                    href={void 0}
+                                    href="javascript:void(0)"
                                     id="navbarDropdown2"
                                     role="button"
                                     data-toggle="dropdown"
@@ -146,7 +146,7 @@ function Nav() {
                                         <li className="dropdown-body">
                                             <ul className="scrollbar scroll_dark max-h-240">
                                                 <li>
-                                                    <a href={void 0}>
+                                                    <a href="javascript:void(0)">
                                                         <div className="notification d-flex flex-row align-items-center">
                                                             <div className="notify-icon bg-img align-self-center">
                                                                 <img
@@ -174,7 +174,7 @@ function Nav() {
                                         <li className="dropdown-footer">
                                             <a
                                                 className="font-13"
-                                                href={void 0}
+                                                href="javascript:void(0)"
                                             >
                                                 {" "}
                                                 View All messages{" "}
@@ -186,7 +186,7 @@ function Nav() {
                             <li className="nav-item dropdown">
                                 <a
                                     className="nav-link dropdown-toggle"
-                                    href={void 0}
+                                    href="javascript:void(0)"
                                     id="navbarDropdown3"
                                     role="button"
                                     data-toggle="dropdown"
@@ -219,7 +219,7 @@ function Nav() {
                                         <li className="dropdown-body min-h-240 nicescroll">
                                             <ul className="scrollbar scroll_dark max-h-240">
                                                 <li>
-                                                    <a href={void 0}>
+                                                    <a href="javascript:void(0)">
                                                         <div className="notification d-flex flex-row align-items-center">
                                                             <div className="notify-icon bg-img align-self-center">
                                                                 <div className="bg-type bg-type-md">
@@ -245,7 +245,7 @@ function Nav() {
                                         <li className="dropdown-footer">
                                             <a
                                                 className="font-13"
-                                                href={void 0}
+                                                href="javascript:void(0)"
                                             >
                                                 {" "}
                                                 View All Activities
@@ -257,7 +257,7 @@ function Nav() {
 
                             <li className="nav-item dropdown user-profile">
                                 <a
-                                    href={void 0}
+                                    href="javascript:void(0)"
                                     className="nav-link dropdown-toggle "
                                     id="navbarDropdown4"
                                     role="button"
@@ -286,7 +286,7 @@ function Nav() {
                                                 </small>
                                             </div>
                                             <a
-                                                href={void 0}
+                                                href="javascript:void(0)"
                                                 onClick={() => logoutUser()}
                                                 className="text-white font-20 tooltip-wrapper"
                                                 data-toggle="tooltip"
@@ -315,7 +315,7 @@ function Nav() {
                                             Settings
                                         </Link>
                                         <a
-                                            href={void 0}
+                                            href="javascript:void(0)"
                                             onClick={() => lockedUser()}
                                             className="dropdown-item d-flex nav-link"
                                         >

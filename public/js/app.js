@@ -4672,7 +4672,7 @@ function Nav() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "navbar-header d-flex align-items-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
-          href: void 0,
+          href: "javascript:void(0)",
           className: "mobile-toggle",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
             className: "ti ti-align-right"
@@ -4681,11 +4681,11 @@ function Nav() {
           className: "navbar-brand",
           to: "/",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-            src: "{{ school_logo() }}",
+            src: "https://ui-avatars.com/api/?name=Futminna&color=7F9CF5&background=EBF4FF",
             className: "img-fluid logo-desktop",
             alt: "logo"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-            src: "{{ school_logo() }}",
+            src: "https://ui-avatars.com/api/?name=Futminna&color=7F9CF5&background=EBF4FF",
             className: "img-fluid logo-mobile",
             alt: "logo"
           })]
@@ -4711,7 +4711,7 @@ function Nav() {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
               className: "nav-item",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
-                href: void 0,
+                href: "javascript:void(0)",
                 className: "nav-link sidebar-toggle",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                   className: "ti ti-align-right"
@@ -4721,7 +4721,7 @@ function Nav() {
               className: "nav-item full-screen d-none d-lg-block",
               id: "btnFullscreen",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
-                href: void 0,
+                href: "javascript:void(0)",
                 className: "nav-link expand",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                   className: "icon-size-fullscreen"
@@ -4734,7 +4734,7 @@ function Nav() {
               className: "nav-item dropdown",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
                 className: "nav-link dropdown-toggle",
-                href: void 0,
+                href: "javascript:void(0)",
                 id: "navbarDropdown2",
                 role: "button",
                 "data-toggle": "dropdown",
@@ -4766,7 +4766,7 @@ function Nav() {
                       className: "scrollbar scroll_dark max-h-240",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
-                          href: void 0,
+                          href: "javascript:void(0)",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                             className: "notification d-flex flex-row align-items-center",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
@@ -4793,7 +4793,7 @@ function Nav() {
                     className: "dropdown-footer",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
                       className: "font-13",
-                      href: void 0,
+                      href: "javascript:void(0)",
                       children: [" ", "View All messages", " "]
                     })
                   })]
@@ -4803,7 +4803,7 @@ function Nav() {
               className: "nav-item dropdown",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
                 className: "nav-link dropdown-toggle",
-                href: void 0,
+                href: "javascript:void(0)",
                 id: "navbarDropdown3",
                 role: "button",
                 "data-toggle": "dropdown",
@@ -4839,7 +4839,7 @@ function Nav() {
                       className: "scrollbar scroll_dark max-h-240",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
-                          href: void 0,
+                          href: "javascript:void(0)",
                           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                             className: "notification d-flex flex-row align-items-center",
                             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
@@ -4867,7 +4867,7 @@ function Nav() {
                     className: "dropdown-footer",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
                       className: "font-13",
-                      href: void 0,
+                      href: "javascript:void(0)",
                       children: [" ", "View All Activities"]
                     })
                   })]
@@ -4876,7 +4876,7 @@ function Nav() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
               className: "nav-item dropdown user-profile",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
-                href: void 0,
+                href: "javascript:void(0)",
                 className: "nav-link dropdown-toggle ",
                 id: "navbarDropdown4",
                 role: "button",
@@ -4906,7 +4906,7 @@ function Nav() {
                         children: user.user.email
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
-                      href: void 0,
+                      href: "javascript:void(0)",
                       onClick: function onClick() {
                         return logoutUser();
                       },
@@ -4935,7 +4935,7 @@ function Nav() {
                       className: "ti ti-settings pr-2 text-info"
                     }), " ", "Settings"]
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
-                    href: void 0,
+                    href: "javascript:void(0)",
                     onClick: function onClick() {
                       return lockedUser();
                     },
@@ -5102,7 +5102,7 @@ function SideBar() {
           className: pathname == '/students' || pathname == '/student-new' ? 'active' : '',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
             className: "has-arrow",
-            href: void 0,
+            href: "javascript:void(0)",
             "aria-expanded": "false",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
               className: "nav-icon ti ti-rocket"
@@ -5112,7 +5112,6 @@ function SideBar() {
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
             "aria-expanded": "false",
-            className: "collapse",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
               className: pathname == '/student-new' ? 'active' : '',
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
@@ -5194,7 +5193,7 @@ function SideBar() {
           className: pathname == '/e-result' ? 'active' : '',
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("a", {
             className: "has-arrow",
-            href: void 0,
+            href: "javascript:void(0)",
             "aria-expanded": "false",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
               className: "nav-icon ti ti-rocket"
