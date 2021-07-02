@@ -23,7 +23,6 @@ const App = () => {
     const fetchSetting = async () => {
         try {
             const response = await getSetting();
-            console.log(response);
             dispatch(setSetting(response.setting)); 
         } catch (err) {
             if(!err.response) return;

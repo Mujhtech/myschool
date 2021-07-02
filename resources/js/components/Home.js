@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import dashboard from "../routes/dashboard";
 import FancyRoute from "./FancyRoute";
+import Footer from './Footer';
 
 function Home() {
     return (
@@ -30,6 +31,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
+                    <Footer />
                 </div>
             </div>
         </Router>
